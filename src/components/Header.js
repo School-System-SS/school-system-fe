@@ -1,19 +1,28 @@
 import React from "react";
+import Image from 'next/image'
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import SigninButton from "./SigninButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Header() {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" className="bg-main" >
       <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Navbar.Brand href="#home"><Image src="/assets/Logo.svg" height={40} width={40} /></Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" className="border-darker bg-lighter" />
+        <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#home">Home</Nav.Link>
+          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#aboutUs">About Us</Nav.Link>
+          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#services">Services</Nav.Link>
+          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#tuition">Tuition</Nav.Link>
+          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#curriculum">Curriculum</Nav.Link>
+          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#contactUS">Contact Us</Nav.Link>
         </Nav>
+        <SigninButton />
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
