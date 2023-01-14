@@ -2,23 +2,27 @@
 
 import Header from './Header'
 // import Introduction from "./components/Introduction";
-// import AboutUs from "./components/AboutUs";
-// import Services from "./components/Services";
+import AboutUs from "./AboutUs";
+import Services from "./Services";
 // import Tuition from "./components/Tuition";
-// import Curriculum from "./components/Curriculum";
-// import ContactUs from "./components/ContactUs";
+import Curriculum from "./Curriculum";
+import ContactUs from "./ContactUs";
 import Footer from "./Footer";
+
+
 
 export default function LandingPage() {
   return (
     <>
       <Header />
-      {/* <Introduction />
       <AboutUs />
       <Services />
-      <Tuition />
       <Curriculum />
-      <ContactUs />*/}
+      <ContactUs />
+      {/* <Introduction />
+      
+      <Tuition />
+      */}
       <Footer /> 
     </>
   );

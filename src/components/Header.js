@@ -14,12 +14,12 @@ export default function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className="border-darker bg-lighter" />
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#home">Home</Nav.Link>
-          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#aboutUs">About Us</Nav.Link>
-          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#services">Services</Nav.Link>
-          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#tuition">Tuition</Nav.Link>
-          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#curriculum">Curriculum</Nav.Link>
-          <Nav.Link className="text-light w-max hover:px-4 hover:bg-lighter rounded" href="#contactUS">Contact Us</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#home">Home</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#aboutUs">About Us</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#services">Services</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#tuition">Tuition</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#Curriculum">Curriculum</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#contactUs">Contact Us</Nav.Link>
         </Nav>
         <SigninButton />
         </Navbar.Collapse>

@@ -1,0 +1,18 @@
+#aboutUs{
+    text-align: center;
+    padding: 2rem 0;
+
+
+}
+#aboutUs h3{
+    padding: 0 0 2rem 0;
+    font-size: 22px;
+    font-weight: bold;
+
+
+
+}
+#aboutUs  p{
+    line-height: 1.5;
+
+}
