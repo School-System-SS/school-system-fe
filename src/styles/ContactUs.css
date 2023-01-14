@@ -1,0 +1,64 @@
+#contactUs{
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#contactUs h3{
+    font-size: 22px;
+    font-weight: bold;
+}
+.icons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 30rem;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+    
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+.form {
+    padding: 0 10rem;
+    margin-top: 2rem;
+
+}
+.contactContainer{
+    max-width: 150px;
+    
+    
+    
+
+}
+.submitButton{
+    width: 100%;
+    background-color: #333456;
+    color: white;
+    border-radius: 5px;
+    padding: 0.3rem 0;
+
+}
+.submitButton:hover{
+    background-color: #292944;
+    color:#5c5d9a
+}
+
