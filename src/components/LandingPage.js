@@ -7,7 +7,7 @@ import Header from './Header'
 // import Tuition from "./components/Tuition";
 // import Curriculum from "./components/Curriculum";
 // import ContactUs from "./components/ContactUs";
-// import Footer from "./components/Footer";
+import Footer from "./Footer";
 
 export default function LandingPage() {
   return (
@@ -18,8 +18,8 @@ export default function LandingPage() {
       <Services />
       <Tuition />
       <Curriculum />
-      <ContactUs />
-      <Footer /> */}
+      <ContactUs />*/}
+      <Footer /> 
     </>
   );
 }
