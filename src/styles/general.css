@@ -1,0 +1,4 @@
+.slick-slide, .slick-active, .slick-current{
+    margin: 0;
+    overflow: hidden;
+}

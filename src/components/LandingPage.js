@@ -9,7 +9,7 @@ import Curriculum from "./Curriculum";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import Carousel from './Carousel';
-
+import Up from "../components/Up.js"
 
 
 
@@ -17,15 +17,15 @@ export default function LandingPage() {
   return (
     <>
       <Header />
-      <Carousel/>
+      <Carousel />
       <AboutUs />
       <Services />
       <Curriculum />
       <ContactUs />
       {/* <Introduction />
-      
       <Tuition />
       */}
+      <Up />
       <Footer /> 
     </>
   );
