@@ -2,3 +2,26 @@
     margin: 0;
     overflow: hidden;
 }
+
+#login-text{
+    color: white !important;
+}
+
+/* #login-text:hover{
+    background-color: #333456;
+} */
+
+.error-msg {
+    color: red;
+}
+
+.signin-page {
+    background-image: url(https://images.squarespace-cdn.com/content/v1/5f2b8041fe60b85663bb3b5c/1597283999491-6WKAGTMW90UQY9QR6540/image-asset.jpeg?format=2500w);
+    background-size: cover;
+    height: 100vh;
+}
+
+.card-signin-page {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}

@@ -3,7 +3,7 @@ import "../styles/up.css"
 export default function Up() {
   return (
     <section className="up" >
-        <a href="#home">
+        <a href="#">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

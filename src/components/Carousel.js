@@ -66,8 +66,8 @@ function Carousel() {
     <section className=" hover:cursor-grab w-full m-auto overflow-hidden  ">
       <Slider   {...settings}>
         {sliderContent.map((slide, index) => (
-          <div className="overflow-hidden max-h-96 " >
-            <img className="object-cover overflow-hidden max-h-96 block w-full" key={index} src={slide.src} alt={slide.alt} />
+          <div className="overflow-hidden max-h-[550px] " >
+            <img className="object-cover overflow-hidden max-h-[550px] block w-full" key={index} src={slide.src} alt={slide.alt} />
           </div>
         ))}
       </Slider >
