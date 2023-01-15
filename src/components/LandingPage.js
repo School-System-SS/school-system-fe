@@ -23,12 +23,6 @@ export default function LandingPage() {
       <Curriculum />
       <Tuition/>
       <ContactUs />
-    
-      
-     
-      {/* <Introduction />
-      <Tuition />
-      */}
       <Up />
       <Footer /> 
     </>
