@@ -1,14 +1,13 @@
 "use client";
 
 import Header from './Header'
-// import Introduction from "./components/Introduction";
 import AboutUs from "./AboutUs";
 import Services from "./Services";
-// import Tuition from "./components/Tuition";
 import Curriculum from "./Curriculum";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import Carousel from './Carousel';
+import Tuition from './Tuition';
 
 
 
@@ -21,11 +20,11 @@ export default function LandingPage() {
       <AboutUs />
       <Services />
       <Curriculum />
+      <Tuition/>
       <ContactUs />
-      {/* <Introduction />
+    
       
-      <Tuition />
-      */}
+     
       <Footer /> 
     </>
   );
