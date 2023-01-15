@@ -8,6 +8,8 @@ import Services from "./Services";
 import Curriculum from "./Curriculum";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
+import Carousel from './Carousel';
+
 
 
 
@@ -15,6 +17,7 @@ export default function LandingPage() {
   return (
     <>
       <Header />
+      <Carousel/>
       <AboutUs />
       <Services />
       <Curriculum />
