@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import Carousel from './Carousel';
 import Tuition from './Tuition';
 
+import Up from "../components/Up.js"
 
 
 
@@ -16,7 +17,7 @@ export default function LandingPage() {
   return (
     <>
       <Header />
-      <Carousel/>
+      <Carousel />
       <AboutUs />
       <Services />
       <Curriculum />
@@ -25,6 +26,10 @@ export default function LandingPage() {
     
       
      
+      {/* <Introduction />
+      <Tuition />
+      */}
+      <Up />
       <Footer /> 
     </>
   );
