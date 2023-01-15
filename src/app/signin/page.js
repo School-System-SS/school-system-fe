@@ -26,7 +26,7 @@ export default function SignIn() {
       username: username,
       password: password,
     };
-    const URL = "http://127.0.0.1:8000/api/token/";
+    const URL = "https://school-system-final-project.herokuapp.com/api/token/";
     axios
       .post(URL, credentials)
       .then((res) => {
