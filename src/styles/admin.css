@@ -1,0 +1,21 @@
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.admin-grid-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+}
+
+.admin-grid-2  {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+@media only screen and (max-width: 640px) {
+    .admin-grid {
+      display: block;
+    }
+  }
