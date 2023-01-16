@@ -64,7 +64,6 @@ export default function Curriculum(){
         
         
                 
-           
                 
         </section>
     )

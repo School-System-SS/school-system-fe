@@ -1,15 +1,20 @@
 "use client";
 
 import Header from './Header'
-// import Introduction from "./components/Introduction";
 import AboutUs from "./AboutUs";
 import Services from "./Services";
-// import Tuition from "./components/Tuition";
 import Curriculum from "./Curriculum";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
+
 import { useState } from 'react';
 import ToastSendEmail from './ToastSendEmail';
+
+import Carousel from './Carousel';
+import Tuition from './Tuition';
+
+import Up from "../components/Up.js"
+
 
 
 
@@ -25,15 +30,22 @@ export default function LandingPage() {
   return (
     <>
       <Header />
+      <Carousel />
       <AboutUs />
       <Services />
       <Curriculum />
+
       {showToast && <ToastSendEmail handleCloseToast={handleCloseToast}/> }
       <ContactUs ShowToast={ShowToast} />
       {/* <Introduction />
       
       <Tuition />
       */}
+
+      <Tuition/>
+      <ContactUs />
+      <Up />
+
       <Footer /> 
     </>
   );
