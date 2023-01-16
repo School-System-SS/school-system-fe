@@ -4,14 +4,7 @@ import axios from "axios";
 import "../../styles/admin.css";
 
 export default function CreateUser() {
-
-  const handleOpenList = () => {
-    const elmnt = document.getElementById("dropdownSearch");
-    elmnt.classList.toggle("hidden")
-}
-
-  const URL =
-    "https://school-system-final-project.herokuapp.com/account/signup/";
+  const URL = "https://school-system-final-project.herokuapp.com/account/signup/";
 
   const handleCreateUser = (e) => {
     e.preventDefault();
