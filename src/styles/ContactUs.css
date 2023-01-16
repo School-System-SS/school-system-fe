@@ -3,6 +3,19 @@
     text-align: center;
 }
 
+.form_inputs{
+  width:45vw !important;
+  border-radius: 1rem !important;
+  margin-top: 2rem;
+  margin-left:-11.5vw;
+  
+}
+
+.text_area_input {
+  margin-left:-11.5vw;
+}
+
+
 #contactUs h3{
     font-size: 22px;
     font-weight: bold;
@@ -38,6 +51,8 @@
     margin-left: .25em;
   }
 .form {
+    
+    margin-left: 12vw;
     padding: 0 10rem;
     margin-top: 2rem;
 
