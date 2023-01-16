@@ -1,13 +1,36 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
+import emailjs from '@emailjs/browser'
 import { SocialIcon } from 'react-social-icons';
 import "../styles/ContactUs.css"
 import React from "react";
 import Container from "react-bootstrap/Container";
+import  { useEffect, useRef ,useState} from "react";
 
 
-export default function ContactUs(){
+
+
+export default function ContactUs(props){
+    
+
+    
+
+        
+        const form   = useRef();
+        const sendEmail = (e) => {
+            e.preventDefault();
+            emailjs.sendForm('service_6sl3bfm', 'template_o8md8kc', form.current, 'ZLzU6byn9qwJVx3ih')
+              .then((result) => { 
+                console.log(result.text)
+              }, (error) => {
+                  console.log(error.message);
+              });
+              e.target.reset();
+              
+            
+          }
+        
     
     return(
         <section id="contactUs">
@@ -33,60 +56,23 @@ export default function ContactUs(){
                 or
         </div>
         <div >
-                <Form className='form'>
-                <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Control type="name" placeholder="Full Name" />
-                </Form.Group>
+                <form className='form' ref={form} onSubmit={sendEmail} >
                 
-            
-
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="name" placeholder="Email" />  
-                </Form.Group>
+                <input  className="form_inputs" name='full_name' type="text" placeholder="Full Name" />
                 
-                <Form.Group className="mb-3" controlId="formBasicSubject">
-                    <Form.Control type="subject" placeholder="Subject" />  
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Control as="textarea" placeholder="Message Area" rows={5} />
-                </Form.Group>
-            <button className="submitButton" type="submit">Submit</button>
-            </Form>
+                <input  className="form_inputs" name='to_email' type="email" placeholder="Email" />  
+                <input className="form_inputs" name='subject' type="text" placeholder="Subject" />  
+                
+                
+                <textarea rows='6' placeholder='Message Area' className="form_inputs text_area_input" name="message_area" />
+                
+            <button  className="form_inputs text_area_input submitButton"  onClick={props.ShowToast} type="submit" id="btnsubmit">Submit</button>
+            </form>
             </div>
 
         
-            {/* <Form className="col-10 offset-10 col-lg-10 offset-lg-4 div-wrapper justify-content-center align-items-center">
- 
-               <Col xs={5}>
-                <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Control type="name" placeholder="Full Name" />
-                </Form.Group>
-                </Col>
-                
-                <Col xs={5}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="email" placeholder="Email" />  
-                </Form.Group>
-                </Col>
-                
-                <Col xs={5}>
-                <Form.Group className="mb-3" controlId="formBasicSubject">
-                    <Form.Control type="subject" placeholder="Subject" />  
-                </Form.Group>
-                </Col>
-                
-                <Col xs={5}>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Control as="textarea" placeholder="Message Area" rows={5} />
-                </Form.Group>
-                </Col>
-                
-                <Button className="btn btn-default col-sm-5" variant="primary" type="submit" >
-                    Submit
-                </Button>
-                
-            </Form>
-        */}
+            
+      
         </Container>
             
         </section>
