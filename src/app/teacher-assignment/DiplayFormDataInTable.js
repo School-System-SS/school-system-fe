@@ -43,7 +43,7 @@ export default function DiplayFormDataInTable(){
 
     return(
 
-        <>
+        
         
         <section className="TeacherAssignment">
         <Create_assignment  handleChange={handleChange} formInputData={formInputData} handleSubmit={handleSubmit} />
@@ -52,6 +52,5 @@ export default function DiplayFormDataInTable(){
         
         
 
-        </>
     )
 }

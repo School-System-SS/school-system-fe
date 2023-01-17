@@ -15,9 +15,9 @@ export default function TeacherDashboardHeader() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className="border-darker bg-lighter" />
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="pr-4 me-auto">
-          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="Dashboard" >Dashboard</Nav.Link>
-          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="Assignment">Assignment</Nav.Link>
-          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="Gradebook">Gradebook</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="/teacher-dashboared" >Dashboard</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="/teacher-assignment">Assignment</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="/teacher-gradebook">Gradebook</Nav.Link>
         </Nav>
         <span class="text-light py-2 pr-9">Welcome , TeacherName</span>
         <LogoutButton />

@@ -10,7 +10,6 @@ export default function AssignmentTeacherView({tableData,tableRowRemove}) {
         <div class="mx-24 flex flex-col ">
           <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
             <div class="py-2 inline-block min-w-full sm:px-8 lg:px-8">
-            <h5 class="text-center">Assignment will created inside this Table</h5>
 
               <div class="overflow-hidden">
                 <table class="min-w-full">
