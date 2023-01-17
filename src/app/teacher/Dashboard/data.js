@@ -10,6 +10,26 @@ export const data = [
             studentName: "lolo",
             grade: "10",
             path: "lolopath"
+        },
+        {
+            studentName: "mohannad",
+            grade: "10",
+            path: "mohannadpath"
+        },
+        {
+            studentName: "mohannad2",
+            grade: "10",
+            path: "mohannad22"
+        },
+        {
+            studentName: "mohannad",
+            grade: "10",
+            path: "mohannadpath"
+        },
+        {
+            studentName: "mohannad2",
+            grade: "10",
+            path: "mohannad22"
         }]
 
     },
@@ -43,4 +63,5 @@ export const data = [
             path: "omar2path"
         }]
 
-    }]
+    }
+]
