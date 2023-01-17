@@ -1,0 +1,21 @@
+.TeacherAssignment {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.TeacherAssignment-1 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+}
+
+.TeacherAssignment-2  {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+@media only screen and (max-width: 640px) {
+    .TeacherAssignment {
+      display: block;
+    }
+  }

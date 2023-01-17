@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import Carousel from "./Carousel";
 import Tuition from "./Tuition";
 
+
 import Up from "../components/Up.js";
 
 export default function LandingPage() {
@@ -22,6 +23,7 @@ export default function LandingPage() {
       <Curriculum />
       
       <Tuition />
+      
       <ContactUs/>
       <Up />
       <Footer />
