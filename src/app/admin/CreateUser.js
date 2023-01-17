@@ -4,6 +4,12 @@ import axios from "axios";
 import "../../styles/admin.css";
 
 export default function CreateUser() {
+
+  const handleOpenList = () => {
+    const elmnt = document.getElementById("dropdownSearch");
+    elmnt.classList.toggle("hidden")
+}
+
   const URL =
     "https://school-system-final-project.herokuapp.com/account/signup/";
 
@@ -168,6 +174,41 @@ export default function CreateUser() {
               </button>
             </div>
           </form>
+        </div>
+
+
+
+        {/* <button id="dropdownSearchButton" onClick={handleOpenList} data-dropdown-toggle="dropdownSearch" class="relative rounded-md border border-[#E0E0E0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md w-full mb-1 inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                            Users
+                            <svg class="w-4 h-4 mr-6 absolute right-0" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+
+                        </button> */}
+
+
+        {/* <div id="dropdownSearch" class="z-10 hidden bg-white rounded shadow w-full dark:bg-gray-700 w-full ">
+
+          <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200 w-full" aria-labelledby="dropdownSearchButton">
+            {users && users.map((item) => {
+              return (
+
+                <li>
+                  <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                    <input id={item.id} type="checkbox" value={item.id} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
+                    <label for="checkbox-item-17" class="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{item.firstname} {item.lastname} | {item.role}</label>
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+
+
+        </div> */}
+
+
+
+
+
           </section>
           </section>
           </section>
