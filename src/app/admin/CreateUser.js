@@ -30,16 +30,25 @@ export default function CreateUser() {
   };
   return (
     <>
-      <h2 className="flex items-center justify-center p-6 text-xl font-bold">
+      
+      <div className="flex items-center justify-center p-12 admin-grid-2">
+        <div className="mx-auto w-full max-w-[550px]">
+        <h2 className="flex items-center justify-center p-6 text-xl font-bold">
         Create New User
       </h2>
-      <div className="flex items-center justify-center p-12 admin-grid-1">
-        <div className="mx-auto w-full max-w-[550px]">
+      <section className="flex flex-col justify-center min-h-screen py-6 bg-center bg-cover bg-fixedbg-gray-100 bg-form-pattern bg- sm:py-12" >
+                <section className="relative py-3 sm:max-w-xl sm:mx-6 ">
+                    
+                    <section className="relative px-4 py-10 bg-white shadow-inner shadow-lighter sm:rounded-3xl sm:p-20 ">
+                        <section className="max-w-md mx-auto">
+                            
+                            <section className="sectionide-y sectionide-lighter"></section>
+      
           <form onSubmit={handleCreateUser}>
             <div className="mb-2">
               <label
                 for="name"
-                className="mb-2 block text-base font-medium text-darker"
+                className="block mb-2 text-base font-medium text-darker"
               >
                 Username
               </label>
@@ -53,7 +62,7 @@ export default function CreateUser() {
             <div className="mb-2">
               <label
                 for="email"
-                className="mb-2 block text-base font-medium text-darker"
+                className="block mb-2 text-base font-medium text-darker"
               >
                 First Name
               </label>
@@ -68,7 +77,7 @@ export default function CreateUser() {
             <div className="mb-2">
               <label
                 for="subject"
-                className="mb-2 block text-base font-medium text-darker"
+                className="block mb-2 text-base font-medium text-darker"
               >
                 Last Name
               </label>
@@ -82,7 +91,7 @@ export default function CreateUser() {
             <div className="mb-2">
               <label
                 for="subject"
-                className="mb-2 block text-base font-medium text-darker"
+                className="block mb-2 text-base font-medium text-darker"
               >
                 Email
               </label>
@@ -96,7 +105,7 @@ export default function CreateUser() {
             <div className="mb-2">
               <label
                 for="subject"
-                className="mb-2 block text-base font-medium text-darker"
+                className="block mb-2 text-base font-medium text-darker"
               >
                 Password
               </label>
@@ -110,7 +119,7 @@ export default function CreateUser() {
             <div className="mb-2">
               <label
                 for="subject"
-                className="mb-2 block text-base font-medium text-darker"
+                className="block mb-2 text-base font-medium text-darker"
               >
                 Password 2
               </label>
@@ -124,7 +133,7 @@ export default function CreateUser() {
             <div className="mb-2">
               <label
                 for="subject"
-                className="mb-2 block text-base font-medium text-darker"
+                className="block mb-2 text-base font-medium text-darker"
               >
                 DOB
               </label>
@@ -138,7 +147,7 @@ export default function CreateUser() {
             <div className="mb-2">
               <label
                 for="subject"
-                className="mb-2 block text-base font-medium text-darker"
+                className="block mb-2 text-base font-medium text-darker"
               >
                 Role
               </label>
@@ -154,12 +163,16 @@ export default function CreateUser() {
             </div>
 
             <div>
-              <button className="hover:shadow-form mt-2 w-full rounded-md bg-lighter text-base hover:bg-main py-2 px-8 font-semibold text-white outline-none">
-                Submit
+              <button className="w-full px-8 py-2 mt-2 text-base font-semibold text-white rounded-md outline-none hover:shadow-form bg-main hover:bg-lighter">
+                Create New User
               </button>
             </div>
           </form>
-        </div>
+          </section>
+          </section>
+          </section>
+          </section>
+          </div>
       </div>
     </>
   );

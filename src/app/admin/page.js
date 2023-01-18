@@ -1,14 +1,21 @@
-import CreateUser from "./CreateUser";
-import CreateCourse from "./CreateCourse";
 import "../../styles/admin.css"
+import AdminHeader from "./adminHeader";
+import DisplayCreate from "./DisplayCreate";
+import Edit from "./Edit";
+import CourseStudentList from "./CourseStudentList";
 
 export default function AdminView() {
   return (
     <>
-      <section className="admin-grid">
+      <section >
         {/* <p className="admin-grid-2">ddd</p> */}
-        <CreateCourse/>
-        <CreateUser />
+        <AdminHeader/>
+        
+        <DisplayCreate/>
+        
+        
+        
+        
       </section>
     </>
   );
