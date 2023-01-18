@@ -5,25 +5,39 @@ import axios from "axios";
 
 export default function CreateCourse(props) {
 
-    const [users, setUsers] = useState('');
+    // const [users, setUsers] = useState('');
     const router = useRouter();
 
-    let accesstoken = JSON.parse(localStorage.getItem('access')) || 0
-    let refreshtoken = JSON.parse(localStorage.getItem('refresh')) || 0
+    // let accesstoken = JSON.parse(localStorage.getItem('access')) || 0
     let config = {
         headers: {
-            Authorization: `Bearer ${accesstoken}`
+            Authorization: `Bearer ${JSON.parse(localStorage.getItem('access'))}`
         }
     }
 
-    // useEffect(() => { updateToken(); }, [])
+    useEffect(() => {
+        let body = {
+            refresh: JSON.parse(localStorage.getItem('refresh'))
+        };
 
-    const URL =
-        "https://school-system-final-project.herokuapp.com/course/create/";
+
+        axios.post(URLTOKEN, body)
+            .then((res) => {
+                localStorage.setItem("access", JSON.stringify(res.data["access"]));
+
+            })
+            .catch((err) => {
+                alert("From useEffect")
+            })
+
+
+    })
+
 
     const handleCreateCourse = (e) => {
         e.preventDefault();
-        console.log(users);
+        const URL =
+            "https://school-system-final-project.herokuapp.com/course/create/";
         let body = {
             name: e.target.name.value,
             time: '14:20:00',
@@ -32,32 +46,30 @@ export default function CreateCourse(props) {
 
 
         axios
-            .post(URL, config, body)
+            .post(URL, body, {
+                headers: {
+                    Authorization: `Bearer ${JSON.parse(localStorage.getItem('access'))}`
+                }
+            })
             .then((res) => {
                 alert(`${body["name"]} is added.`);
             })
             .catch((err) => {
-                updateToken();
+                router.refresh();
                 handleCreateCourse();
-                alert(`ERROR1`);
+                alert("From handleCreateCourse");
             });
     };
     const URLTOKEN = "https://school-system-final-project.herokuapp.com/api/token/refresh/";
 
-    const updateToken = () => {
-        let body = {
-            refresh: refreshtoken
-        };
+    async function updateToken() {
+        // let body = {
+        //     refresh: JSON.parse(localStorage.getItem('refresh'))
+        // };
 
-        axios
-            .post(URLTOKEN, body)
-            .then((res) => {
-                localStorage.setItem("refresh", JSON.stringify(res.data["refresh"]));
-            })
-            .catch((err) => {
-                alert(`ERROR2`);
+        // let res = await axios.post(URLTOKEN, body)
+        // localStorage.setItem("refresh", JSON.stringify(res.data["refresh"]));
 
-            });
     }
 
     return (
