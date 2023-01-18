@@ -16,9 +16,9 @@ export default function AdminHeader() {
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
           <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="/admin">Create</Nav.Link>
-          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="/">Classes</Nav.Link>
-          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="/">Students</Nav.Link>
-          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="/">Teachers</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="/admin-classes">Classes</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="/admin-student">Students</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="/admin-teacher">Teachers</Nav.Link>
 
           
         </Nav>
