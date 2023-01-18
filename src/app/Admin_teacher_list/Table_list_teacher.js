@@ -34,7 +34,7 @@ export default function Table_list_teacher(){
                             
                            
                               
-                                    <tr className="cursor-pointer border border-gray-200 dark:border-gray-700">
+                                    <tr className=" border border-gray-200 dark:border-gray-700">
                                         <th scope="row"  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 border">
                                           User Name
                                         </th>
