@@ -1,14 +1,14 @@
-
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import {data} from './data'
 
+// data.description
 
 export default function Assignment() {
 
 
     return (
-        <section className='w-full h-full'>
+        <section className=''>
             <section className='w-[70%] h-full m-[10%]'>
                 <div className="relative overflow-x-auto shadow-md sm:rounded-xl border ">
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 text-center">
