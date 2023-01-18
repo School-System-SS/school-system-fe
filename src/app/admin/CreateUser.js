@@ -42,7 +42,7 @@ export default function CreateUser() {
         <h2 className="flex items-center justify-center p-6 text-xl font-bold">
         Create New User
       </h2>
-      <section className="flex flex-col justify-center min-h-screen py-6 bg-center bg-cover bg-fixedbg-gray-100 bg-form-pattern bg- sm:py-12" >
+      {/* <section className="flex flex-col justify-center min-h-screen py-6 bg-center bg-cover bg-fixedbg-gray-100 bg-form-pattern bg- sm:py-12" > */}
                 <section className="relative py-3 sm:max-w-xl sm:mx-6 ">
                     
                     <section className="relative px-4 py-10 bg-white shadow-inner shadow-lighter sm:rounded-3xl sm:p-20 ">
@@ -174,7 +174,7 @@ export default function CreateUser() {
               </button>
             </div>
           </form>
-        </div>
+        {/* </div> */}
 
 
 
@@ -212,7 +212,7 @@ export default function CreateUser() {
           </section>
           </section>
           </section>
-          </section>
+          {/* </section> */}
           </div>
       </div>
     </>
