@@ -1,18 +1,25 @@
-
+"use client" 
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import {data} from './data'
+import { useRouter } from 'next/navigation';
+import StudentHeader from '../student-dashborad/StudentHeader';
 
+// data.description
 
 export default function Assignment() {
-
-
+const route = useRouter();
+const Details = (arg) =>{
+    localStorage.setItem('id',JSON.stringify(arg));
+    route.push('/student/student-assignment/details')
+}
     return (
-        <section className='w-full h-full'>
+        <section>
+            <StudentHeader/>
             <section className='w-[70%] h-full m-[10%]'>
                 <div className="relative overflow-x-auto shadow-md sm:rounded-xl border ">
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 text-center">
-                        <thead className="text-xs text-[#FFFFFF] uppercase dark:text-gray-400 border bg-darker">
+                        <thead className="text-xs text-[#FFFFFF] dark:text-gray-400 border bg-darker">
                             <tr>
                                 <th scope="col" className="px-6 py-3 hover:bg-gray-50 dark:bg-gray-800 border">
                                     Assignment Name
@@ -31,11 +38,10 @@ export default function Assignment() {
                         <tbody>
                             
                             {data && data.map((item) => {
-                                console.log(item);
                                 return (
-                                    <tr className="border border-gray-200 dark:border-gray-700">
-                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 border">
-                                            {item.assignmentName}
+                                    <tr className="cursor-pointer border border-gray-200 dark:border-gray-700">
+                                        <th scope="row" onClick={()=>Details(item)} className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 border">
+                                           {item.assignmentName}
                                         </th>
                                         <td className="px-6 py-4 border">
                                             {item.isSubmited ? 

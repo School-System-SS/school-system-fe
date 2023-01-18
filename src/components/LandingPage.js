@@ -21,9 +21,7 @@ export default function LandingPage() {
       <AboutUs />
       <Services />
       <Curriculum />
-      
       <Tuition />
-      
       <ContactUs/>
       <Up />
       <Footer />
