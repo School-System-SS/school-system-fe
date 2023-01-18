@@ -15,7 +15,7 @@ export default function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
           <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#home">Home</Nav.Link>
-          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#aboutUs">About Us</Nav.Link>
+          <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#aboutUs">Mission & Vision</Nav.Link>
           <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#services">Services</Nav.Link>
           <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#Curriculum">Curriculum</Nav.Link>
           <Nav.Link className="rounded text-light w-max hover:px-4 hover:bg-lighter" href="#Tuition">Tuition</Nav.Link>
