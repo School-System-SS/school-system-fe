@@ -88,15 +88,26 @@ export default function CreateCourse(props) {
 
     return (
         <>
-            <div className="flex items-center justify-center p-12">
+            <div className="flex items-center justify-center p-12 admin-grid-1">
                 <div className="mx-auto w-full max-w-[550px]">
+                <h2 className="flex items-center justify-center p-6 text-xl font-bold">
+        Create Course
+      </h2>
+      <section className="flex flex-col justify-center min-h-screen py-6 bg-center bg-cover bg-fixedbg-gray-100 bg-form-pattern mb-[40%] bg- sm:py-12" >
+                <section className="relative py-3 sm:max-w-xl sm:mx-6 ">
+                    
+                    <section className="relative px-4 py-10 shadow-inner shadow-lighter sm:rounded-3xl sm:p-20 ">
+                        <section className="max-w-md mx-auto">
+                            
+                            <section className="sectionide-y sectionide-lighter"></section>
+      
                     <form
                         onSubmit={handleCreateCourse}
                     >
-                        <div className="mb-5">
+                        <div className="mb-3">
                             <label
                                 for="name"
-                                className="mb-3 block text-base font-medium text-[#07074D]"
+                                className="block mb-2 text-base font-medium text-darker"
                             >
                                 Course Name
                             </label>
@@ -105,13 +116,13 @@ export default function CreateCourse(props) {
                                 name="name"
                                 id="name"
                                 placeholder="Course Name"
-                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                            />
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                />
                         </div>
-                        <div className="mb-5">
+                        <div className="mb-3">
                             <label
                                 for="email"
-                                className="mb-3 block text-base font-medium text-[#07074D]"
+                                className="block mb-2 text-base font-medium text-darker"
                             >
                                 Username
                             </label>
@@ -120,14 +131,14 @@ export default function CreateCourse(props) {
                                 name="user"
                                 id="user"
                                 placeholder="Username"
-                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
 
                             />
                         </div>
-                        <div className="mb-5">
+                        <div className="mb-3">
                             <label
                                 for="subject"
-                                className="mb-3 block text-base font-medium text-[#07074D]"
+                                className="block mb-2 text-base font-medium text-darker"
                             >
                                 Class Time
                             </label>
@@ -135,14 +146,14 @@ export default function CreateCourse(props) {
                                 type="time"
                                 name="time"
                                 id="time"
-                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
 
                             />
                         </div>
-                        <div className="mb-5">
+                        <div className="mb-3">
                             <label
                                 for="message"
-                                className="mb-3 block text-base font-medium text-[#07074D]"
+                                className="block mb-2 text-base font-medium text-darker"
                             >
                                 class No.
                             </label>
@@ -151,7 +162,7 @@ export default function CreateCourse(props) {
                                 name="classes"
                                 id="classes"
                                 placeholder="class No."
-                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
 
                             />
                         </div>
@@ -194,12 +205,17 @@ export default function CreateCourse(props) {
 
                         <div>
                             <button
-                                className="hover:shadow-form rounded-md hover:bg-main py-3 px-8 text-base font-semibold text-white outline-none mt-4 w-full bg-lighter"
-                            >
+className="w-full px-8 py-2 mt-2 text-base font-semibold text-white rounded-md outline-none hover:shadow-form bg-main hover:bg-lighter"                            >
                                 Create New Course
                             </button>
                         </div>
                     </form>
+                    </section>
+                    </section>
+                    </section>
+                    </section>
+                    
+                    
 
                 </div>
             </div>
