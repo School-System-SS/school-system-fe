@@ -2,7 +2,7 @@ import SideBarCategory from "./SideBarCategory"
 export default function SideBar(props) {
   return (
     <section className="fixed  h-[100%]">
-      <div class=" bg-main relative h-[100%]" >
+      <div class=" bg-darker relative h-[100%]" >
         <div class="pt-4 pb-2 px-6 ">
           <div class="flex relative items-center">
             <div class="shrink-0">
