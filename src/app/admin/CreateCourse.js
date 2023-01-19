@@ -27,7 +27,7 @@ export default function CreateCourse(props) {
 
             })
             .catch((err) => {
-                alert("From useEffect")
+                // alert("From useEffect")
             })
 
 
