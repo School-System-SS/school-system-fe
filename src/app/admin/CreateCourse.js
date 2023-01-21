@@ -82,7 +82,7 @@ export default function CreateCourse(props) {
                 alert("From handleCreateCourse");
             });
     };
-    const URLTOKEN = "https://school-system-final-project.herokuapp.com/api/token/refresh/";
+    // const URLTOKEN = "https://school-system-final-project.herokuapp.com/api/token/refresh/";
 
     async function updateToken() {
         // let body = {
