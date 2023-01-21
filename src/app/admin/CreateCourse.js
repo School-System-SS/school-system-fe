@@ -16,34 +16,56 @@ export default function CreateCourse(props) {
     }
 
     useEffect(() => {
-        let body = {
-            refresh: JSON.parse(localStorage.getItem('refresh'))
-        };
-
-
-        axios.post(URLTOKEN, body)
+        const URLUSERS = "https://school-system-final-project.herokuapp.com/account/getUsers/"
+        axios
+            .get(URLUSERS, config)
             .then((res) => {
-                localStorage.setItem("access", JSON.stringify(res.data["access"]));
+                // res.data.map((item)=>{
+                //     let obj = {
+                //       "id":item.id,
+                //       "username": item.username,
+                //       "role": item.role,
+                //     }
+                setUsers(res.data);
 
+                //   })
             })
-            .catch((err) => {
-                // alert("From useEffect")
+            .catch((error) => {
+                updateToken();
+                router.refresh();
             })
 
+    }, [])
 
-    })
-
+    const URL =
+        "https://school-system-final-project.herokuapp.com/course/create/";
 
     const handleCreateCourse = (e) => {
         e.preventDefault();
-        const URL =
-            "https://school-system-final-project.herokuapp.com/course/create/";
-        let body = {
-            name: e.target.name.value,
-            time: '14:20:00',
-            classes: e.target.classes.value,
-        };
+        console.log(users);
+        // let body = {
+        //     name: e.target.name.value,
+        //     user: e.target.user.value,
+        //     time: e.target.time.value,
+        //     classes: e.target.classes.value,
+        // };
+        // axios
+        //     .post(URL, body)
+        //     .then((res) => {
+        //         alert(`${body["username"]} is added.`);
+        //     })
+        //     .catch((err) => {
+        //         alert(`ERROR`);
+        //         updateToken();
+        //         handleCreateCourse();
+        //     });
+    };
+    const URLTOKEN = "https://school-system-final-project.herokuapp.com/api/token/refresh/";
 
+    const updateToken = () => {
+        let body = {
+            refresh: JSON.parse(localStorage.getItem('refresh'))
+        };
 
         axios
             .post(URL, body, {
