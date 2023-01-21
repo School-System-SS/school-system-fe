@@ -5,8 +5,8 @@ import AdminHeader from "../admin/adminHeader";
 export default function page() {
   return (
     <>
-    <AdminHeader/>
-    <TableOfTeachers/>
+      <AdminHeader />
+      <TableOfTeachers />
     </>
   )
 }

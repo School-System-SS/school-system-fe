@@ -1,4 +1,5 @@
 export default function FailedToast(props) {
+  
   return (
     <div
       id="toast-danger"

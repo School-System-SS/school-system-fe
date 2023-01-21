@@ -3,19 +3,12 @@ import TeacherDashboardHeader from "../teacher-gradebook/Dashboard/TeacherDashbo
 import React from "react";
 import DiplayFormDataInTable from "./DiplayFormDataInTable";
 
-export default function view_assignment(){
-   
+export default function view_assignment() {
 
-    return(
-
+    return (
         <>
-        
-        <TeacherDashboardHeader/>
-
-        <DiplayFormDataInTable/>
-        
-        
-
+            <TeacherDashboardHeader />
+            <DiplayFormDataInTable />
         </>
     );
 }

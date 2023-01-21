@@ -18,9 +18,9 @@ export default function ListViewAssignment() {
         <div className="mt-16 flex justfiy-between gap-40">
             <SideBar teacherAssignmentList={data} ShowAssignmentsTable={ShowAssignmentsTable} />
             {
-             TableView ? <TableAssignmentListOfTeacher SelectedAssignmentTeacher={SelectedAssignmentTeacher} TableView={TableView} />:<EmptyBackground/>
+                TableView ? <TableAssignmentListOfTeacher SelectedAssignmentTeacher={SelectedAssignmentTeacher} TableView={TableView} /> : <EmptyBackground />
             }
-              
+
 
         </div>
     )

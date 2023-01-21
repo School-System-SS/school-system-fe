@@ -16,12 +16,12 @@ export default function Footer() {
         <div class="lg:flex md:flex max-[640px]:flex-col flex-wrap lg:justify-between max-[640px]:justify-center items-center">
           <div className="flex justify-center">
             <a href="#">
-            <Image
-              src="/assets/Footer.svg"
-              className="m-0"
-              height={200}
-              width={200}
-            />
+              <Image
+                src="/assets/Footer.svg"
+                className="m-0"
+                height={200}
+                width={200}
+              />
             </a>
           </div>
           <div class="mt-6 lg:mb-0 mb-6 flex justify-center">

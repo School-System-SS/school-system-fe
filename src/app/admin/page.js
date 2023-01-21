@@ -8,13 +8,9 @@ export default function AdminView() {
   return (
     <>
       <section >
-        {/* <p className="admin-grid-2">ddd</p> */}
         <AdminHeader/>
         
         <DisplayCreate/>
-        
-        
-        
         
       </section>
     </>
