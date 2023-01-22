@@ -2,24 +2,15 @@
 export default function TableAssignmentListOfTeacher(props) {
 
   return (
-    // <section className="h-[500px] overflow-scroll mt-[2%] ml-[20%]">
-    //   <div><div >
-    //     <table className="text-center shadow-lg 1 border-collapse min-w-[1000px]">
-    //       <tr className="sticky top-0   bg-main">
-    //         <th className="rounded-tl-3xl hovertext-sm font-medium text-white px-6 py-4 text-left">Student</th>
-    //         <th className=" hovertext-sm font-medium text-white px-6 py-4 text-left">Assignment</th>
-    //         <th className=" hovertext-sm font-medium text-white px-6 py-4 text-left">Grade</th>
-    //         <th className="rounded-tr-3xl hovertext-sm font-medium text-white px-6 py-4 text-left">Action</th>
 
-    //       </tr>
-    <section className="mt-[3%] ml-[14%]">
+    <section className="ml-[14%]">
       <div class="mx-24 flex flex-col ">
         <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
           <div class="py-2 inline-block min-w-full sm:px-8 lg:px-8">
 
             <div class="overflow-hidden">
               <table class="min-w-[900px] min-w-full">
-                <thead class="bg-main border-b">
+                <thead class="bg-main border-b text-[#FFFFFF]">
                   <tr>
                     <th
                       scope="col"
@@ -43,7 +34,6 @@ export default function TableAssignmentListOfTeacher(props) {
                     >
                       Action
                     </th>
-
                   </tr>
                 </thead>
                 <tbody>
@@ -58,7 +48,6 @@ export default function TableAssignmentListOfTeacher(props) {
                         </svg>
                         </button></td>
                       </tr>
-
                     )
                   })}
                 </tbody>

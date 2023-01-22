@@ -17,8 +17,8 @@ export default function view_assignment() {
         <>
       {showContent && (
         <section>
-            <div class="teacher-page">
-                <TeacherDashboardHeader />
+            <div>
+                {/* <TeacherDashboardHeader /> */}
                 <ListViewAssignment />
             </div>
         </section>
