@@ -10,10 +10,10 @@ export default function Services() {
     return (
         <section id='services'>
             <h3>Services</h3>
-            <Container className="Curriculum" >
+            <Container className="services" >
 
                 <Card style={{ width: '16rem' }}>
-                    <Card.Img variant="top" src="https://lsuonline-static.s3.amazonaws.com/media/images/2020/04/20/school-counselor-feature.jpg" />
+                    <Card.Img className="h-32" variant="top" src="https://lsuonline-static.s3.amazonaws.com/media/images/2020/04/20/school-counselor-feature.jpg" />
                     <Card.Body>
                         <Card.Title className="text-center">Student counsellors</Card.Title>
                         <Card.Text>
@@ -25,34 +25,32 @@ export default function Services() {
                 </Card>
 
                 <Card style={{ width: '16rem' }}>
-                    <Card.Img variant="top" src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F220831094610-graduate-hats-stock.jpeg" />
+                    <Card.Img className="h-32" variant="top" src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F220831094610-graduate-hats-stock.jpeg" />
                     <Card.Body>
                         <Card.Title className="text-center">Career services</Card.Title>
                         <Card.Text>
-                            Engage in leadership, social, advocacy and social entrepreneurship skills within community.
-                        </Card.Text>
+                        Everyone feels overwhelmed by school at least once during their studies and there’s absolutely no reason to face this feeling alone.                        </Card.Text>
 
                     </Card.Body>
                 </Card>
 
-
                 <Card style={{ width: '16rem' }}>
+                    <Card.Img className="h-32" variant="top" src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2022/10/GettyImages-1422783091-1920x1080.jpg" />
                     <Card.Body>
-                        <Card.Img variant="top" src=" https://studying-in-sweden.com/wp-content/uploads/2013/12/health-insurance-medical-treatments.jpg" />
-                        <Card.Title className="text-center"> healthcare</Card.Title>
+                        <Card.Title className="text-center">healthcare</Card.Title>
                         <Card.Text>
-                            Some schools offer a student medical service on campus with flexible appointments, telephone consultations.
-
+                        Everyone feels overwhelmed by school at least once during their studies and there’s absolutely no reason to face this feeling alone.
                         </Card.Text>
+
                     </Card.Body>
                 </Card>
+               
                 <Card style={{ width: '16rem' }}>
-                    <Card.Img variant="top" src="https://media.istockphoto.com/id/947895170/photo/where-dreams-are-turned-into-reality.jpg?s=612x612&w=0&k=20&c=gxONAsgLG7S90u-cR1dQAqurhZyFrwzDrmBaR2PwJq4=" />
+                    <Card.Img className="h-32" variant="top" src="https://media.istockphoto.com/id/947895170/photo/where-dreams-are-turned-into-reality.jpg?s=612x612&w=0&k=20&c=gxONAsgLG7S90u-cR1dQAqurhZyFrwzDrmBaR2PwJq4=" />
                     <Card.Body>
                         <Card.Title className="text-center">Study training</Card.Title>
                         <Card.Text>
-                            Some schools offer study skills workshops and training courses to teach students
-                            .
+                        Everyone feels overwhelmed by school at least once during their studies and there’s absolutely no reason to face this feeling alone.
                         </Card.Text>
 
                     </Card.Body>
