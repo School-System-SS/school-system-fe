@@ -3,7 +3,7 @@ import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { data } from './data'
 import { useRouter } from 'next/navigation';
-import StudentHeader from '../student-dashborad/StudentHeader';
+import StudentHeader from '../student-dashboard/StudentHeader';
 
 // data.description
 

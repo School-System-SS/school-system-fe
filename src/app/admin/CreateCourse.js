@@ -84,16 +84,6 @@ export default function CreateCourse(props) {
     };
     // const URLTOKEN = "https://school-system-final-project.herokuapp.com/api/token/refresh/";
 
-    async function updateToken() {
-        // let body = {
-        //     refresh: JSON.parse(localStorage.getItem('refresh'))
-        // };
-
-        // let res = await axios.post(URLTOKEN, body)
-        // localStorage.setItem("refresh", JSON.stringify(res.data["refresh"]));
-
-    }
-
     return (
         <>
             <div className="flex items-center justify-center p-12 admin-grid-1">
