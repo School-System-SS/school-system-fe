@@ -14,8 +14,8 @@ export default function Curriculum() {
                     <Card.Body>
                         <Card.Title className="text-center">NATIONAL</Card.Title>
                         <Card.Text>
-                        The first National Book Awards were presented in May 1936 at the annual 
-                        convention of the American Booksellers Association .
+                            The first National Book Awards were presented in May 1936 at the annual
+                            convention of the American Booksellers Association .
                         </Card.Text>
 
                     </Card.Body>
@@ -26,9 +26,9 @@ export default function Curriculum() {
                     <Card.Body>
                         <Card.Title className="text-center">SAT</Card.Title>
                         <Card.Text>
-                        The SAT is a globally recognized college admission
-                        test that lets you show colleges what you know and how well you can apply that knowledge.
-                        
+                            The SAT is a globally recognized college admission
+                            test that lets you show colleges what you know and how well you can apply that knowledge.
+
                         </Card.Text>
 
                     </Card.Body>
@@ -40,8 +40,8 @@ export default function Curriculum() {
                     <Card.Body>
                         <Card.Title className="text-center">IG</Card.Title>
                         <Card.Text>
-                        The International General Certificate of Secondary Education is a content-rich programme that prepares students
-                         for further study .
+                            The International General Certificate of Secondary Education is a content-rich programme that prepares students
+                            for further study .
                         </Card.Text>
 
                     </Card.Body>

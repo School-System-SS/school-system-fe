@@ -1,82 +1,82 @@
 export const data = [
     {
-        id:1,
+        id: 1,
         assignmentName: "assignment1",
-        isSubmited:true,
+        isSubmited: true,
         grade: "10",
-        dueDate:"29/01/2023",
-        description:"description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111"
+        dueDate: "29/01/2023",
+        description: "description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111description11111"
     },
     {
-        id:2,
+        id: 2,
         assignmentName: "assignment2",
-        isSubmited:false,
+        isSubmited: false,
         grade: "10",
-        dueDate:"29/01/2023",
-        description:"description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222"
+        dueDate: "29/01/2023",
+        description: "description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222description2222"
     },
     {
-        id:3,
+        id: 3,
         assignmentName: "assignment3",
-        isSubmited:true,
+        isSubmited: true,
         grade: "10",
-        dueDate:"29/01/2023",
-        description:"description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333"
+        dueDate: "29/01/2023",
+        description: "description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333description3333"
     },
     {
-        id:4,
+        id: 4,
         assignmentName: "assignment4",
-        isSubmited:false,
+        isSubmited: false,
         grade: "10",
-        dueDate:"29/01/2023",
-        description:"description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444"
+        dueDate: "29/01/2023",
+        description: "description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444description4444"
     },
     {
-        id:5,
+        id: 5,
         assignmentName: "assignment5",
-        isSubmited:true,
+        isSubmited: true,
         grade: "10",
-        dueDate:"29/01/2023",
-        description:"description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555"
+        dueDate: "29/01/2023",
+        description: "description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555description55555"
     },
     {
-        id:6,
+        id: 6,
         assignmentName: "assignment6",
-        isSubmited:false,
+        isSubmited: false,
         grade: "10",
-        dueDate:"29/01/2023",
-        description:"description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666"
+        dueDate: "29/01/2023",
+        description: "description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666description66666"
     },
     {
-        id:7,
+        id: 7,
         assignmentName: "assignment7",
-        isSubmited:true,
+        isSubmited: true,
         grade: "10",
-        dueDate:"29/01/2023",
-        description:"description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777"
+        dueDate: "29/01/2023",
+        description: "description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777description7777"
     },
     {
-        id:8,
+        id: 8,
         assignmentName: "assignment8",
-        isSubmited:false,
+        isSubmited: false,
         grade: "10",
-        dueDate:"29/01/2023",
-        description:"description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888"
+        dueDate: "29/01/2023",
+        description: "description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888description88888"
     },
     {
-        id:9,
+        id: 9,
         assignmentName: "assignment9",
-        isSubmited:true,
+        isSubmited: true,
         grade: "10",
-        dueDate:"29/01/2023",
-        description:"description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999"
+        dueDate: "29/01/2023",
+        description: "description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999description999999"
     },
     {
-        id:10,
+        id: 10,
         assignmentName: "assignment10",
-        isSubmited:false,
+        isSubmited: false,
         grade: "10",
-        dueDate:"29/01/2023",
-        description:"description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461"
+        dueDate: "29/01/2023",
+        description: "description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461description123456478798461"
     },
 ]

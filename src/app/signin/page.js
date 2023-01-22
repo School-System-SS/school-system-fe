@@ -4,11 +4,16 @@ import React, { useState } from "react";
 import Image from "next/image";
 import "src/styles/general.css";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function SignIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
+  const [isSupervisor, setIsSupervisor] = useState(false)
+  const [isTeacher, setIsTeacher] = useState(false)
+  const [isStudent, setIsStudent] = useState(false)
+  const router = useRouter()
 
   const handleChangeUsername = (e) => {
     setUsername(e.target.value);
@@ -33,6 +38,19 @@ export default function SignIn() {
         localStorage.setItem("access", JSON.stringify(res.data["access"]));
         localStorage.setItem("refresh", JSON.stringify(res.data["refresh"]));
         localStorage.setItem("username", JSON.stringify(username));
+        setIsStudent(localStorage.setItem("is_student", JSON.stringify(res.data.is_student)));
+        setIsTeacher(localStorage.setItem("is_teacher", JSON.stringify(res.data.is_teacher)));
+        setIsSupervisor(localStorage.setItem("is_supervisor", JSON.stringify(res.data.is_supervisor)));
+
+        if (JSON.parse(localStorage.getItem('is_student'))) {
+          router.push('/student/student-dashboard')
+        }
+        if (JSON.parse(localStorage.getItem('is_teacher'))){
+          router.push('/teacher-dashboard')
+        }
+        if (JSON.parse(localStorage.getItem('is_supervisor'))){
+          router.push('/admin')
+        }
       })
       .catch((err) => {
         setShowError(true);

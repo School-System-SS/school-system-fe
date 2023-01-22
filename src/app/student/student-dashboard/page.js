@@ -1,10 +1,11 @@
 "use client";
 
+import Student_dashborad from "./Student_dashborad";
+import StudentHeader from "./StudentHeader";
 import React, { useState, useEffect, use } from "react";
 import Unauthorized from "../../../components/Unauthorized";
-import Assignment from "./assignment";
 
-export default function Page() {
+export default function StudentDasborad() {
   const [showContent, setContent] = useState(false);
 
   useEffect(() => {
@@ -13,7 +14,12 @@ export default function Page() {
 
   return (
     <>
-      {showContent && <Assignment />}
+      {showContent && (
+        <section>
+          <StudentHeader />
+          <Student_dashborad />
+        </section>
+      )}
       {!showContent && <Unauthorized />}
     </>
   );

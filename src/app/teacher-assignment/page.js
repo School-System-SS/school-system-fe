@@ -1,21 +1,26 @@
-'use client';
+"use client";
+
 import TeacherDashboardHeader from "../teacher-gradebook/Dashboard/TeacherDashboardHeader";
-import React from "react";
 import DiplayFormDataInTable from "./DiplayFormDataInTable";
+import React, { useState, useEffect, use } from "react";
+import Unauthorized from "../../components/Unauthorized";
 
-export default function view_assignment(){
-   
+export default function view_assignment() {
+  const [showContent, setContent] = useState(false);
 
-    return(
+  useEffect(() => {
+    setContent(JSON.parse(localStorage.getItem("is_teacher")));
+  }, []);
 
-        <>
-        
-        <TeacherDashboardHeader/>
-
-        <DiplayFormDataInTable/>
-        
-        
-
-        </>
-    );
+  return (
+    <>
+      {showContent && (
+        <section>
+          <TeacherDashboardHeader />
+          <DiplayFormDataInTable />
+        </section>
+      )}
+      {!showContent && <Unauthorized />}
+    </>
+  );
 }

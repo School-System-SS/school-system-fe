@@ -1,5 +1,4 @@
 "use client";
-
 import Header from "./Header";
 import AboutUs from "./AboutUs";
 import Services from "./Services";
@@ -8,12 +7,10 @@ import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
 import Tuition from "./Tuition";
-
-
 import Up from "../components/Up.js";
 
 export default function LandingPage() {
-  
+
   return (
     <>
       <Header />
@@ -22,7 +19,7 @@ export default function LandingPage() {
       <Services />
       <Curriculum />
       <Tuition />
-      <ContactUs/>
+      <ContactUs />
       <Up />
       <Footer />
     </>
