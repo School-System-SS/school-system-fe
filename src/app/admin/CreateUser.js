@@ -15,6 +15,7 @@ export default function CreateUser() {
   const [type, setType] = useState("");
   const [refresh, setRefresh] = useState("");
 
+
   const ACCOUNTS_URL =
     "https://school-system-final-project.herokuapp.com/accounts/signup/";
   const SIGNIN = "https://school-system-final-project.herokuapp.com/api/token/";
@@ -104,6 +105,7 @@ export default function CreateUser() {
           .catch((err) => {});
       })
       .catch((err) => {});
+
   };
 
   return (
