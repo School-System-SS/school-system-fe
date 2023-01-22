@@ -1,53 +1,42 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "../../styles/teacher.css";
 import axios from "axios";
 
+export default function Create_assignment() {
 
-export default function Create_assignment({ handleChange, formInputData, handleSubmit }) {
-  
-// const [assignment,setassignment]=useState({})
-
-  const createOneAssignment=(e)=>{
+  const createOneAssignment = (e) => {
     e.preventDefault()
-
-
     const URL = 'https://school-system-final-project.herokuapp.com/api/v1/assignment/create/';
     let config = {
       headers: {
         Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
       },
     };
-
-    // title = models.CharField(max_length=255)
-    // description = models.CharField(max_length=1000, default="")
-    // due_date = models.DateTimeField()
-    // points = models.FloatField()
-    // course = models.ForeignKey(CourseModel, on_delete=models.CASCADE, related_name='assignments')
-    // teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='assignments')
-
     let body = {
       title: e.target.Title.value,
-      description:e.target.message.value,
+      description: e.target.message.value,
       due_date: e.target.DueDate.value,
-      points:10,
+      points: 10,
       course: 1,
-      teacher:JSON.parse(localStorage.getItem("userId"))
-
-      
+      teacher: JSON.parse(localStorage.getItem("userId"))
     };
 
     axios
-    .post(URL,body)
-    .then((res)=>{
-      console.log(res.data)
-
-    })
-    
-    .catch((err)=>{
-      console.log("erorrr")
-    })
-
-
+      .post(URL, body,config)
+      .then((res) => {
+    const STUURL = 'https://school-system-final-project.herokuapp.com/api/v1/studentAssignment/create/';
+        axios
+      .post(STUURL, {course:1,assignment:res.data.pk},config)
+      .then((res1) => {
+        alert("Create Successfully");
+      })
+      .catch((err) => {
+        alert(err,"error");
+      })
+      })
+      .catch((err) => {
+        alert(err,"error");
+      })
   }
 
   return (
@@ -61,58 +50,45 @@ export default function Create_assignment({ handleChange, formInputData, handleS
           </div>
           <img src="https://mambaui.com/assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
         </div>
-
-        <div class="rounded bg-white max-w-md  overflow-hidden shadow-xl p-9 content-center">
-          <form class="space-y-4" action="#" method="POST" onSubmit={createOneAssignment} >
+        <div className="rounded bg-white max-w-md  overflow-hidden shadow-xl p-9 content-center">
+          <form className="space-y-4" onSubmit={createOneAssignment} >
             <input type="hidden" name="remember" value="True" />
-            <div class="rounded-md shadow-sm -space-y-px">
-              <div class="grid gap-6">
-                <div class="col-span-12">
-
+            <div className="rounded-md shadow-sm -space-y-px">
+              <div className="grid gap-6">
+                <div className="col-span-12">
                   <input
                     type="text"
                     name="Title"
                     id="Title"
-
                     placeholder="Title"
-                    onChange={handleChange} value={formInputData.Title}
-
-                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
+                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
                   />
                 </div>
-
-                <div class="col-span-12">
-
+                <div className="col-span-12">
                   <input
                     type="date"
                     name="DueDate"
                     id="DueDate"
-
                     placeholder="Due Date"
-                    onChange={handleChange} value={formInputData.DueDate}
-                    class=" focus:ring-indigo-700 focus:border-indigo-700 block w-full  sm:text-lg border-gray-600 rounded-md"
+                    className=" focus:ring-indigo-700 focus:border-indigo-700 block w-full  sm:text-lg border-gray-600 rounded-md"
                   />
                 </div>
               </div>
             </div>
-
             <div>
-
               <textarea
                 id="message"
+                name="message"
                 rows="3"
                 className="w-full rounded dark:bg-gray-800"
                 placeholder="Description"
               />
             </div>
-
             <div>
               <button
                 className="bg-darker text-[#FFFFFF] py-2 px-4 rounded text-white lg:mt-0 md:mt-2 lg:w-fit md:w-full max-[640px]:mt-2 max-[640px]:w-full sm:w-full hover:bg-main"
-                onClick={handleSubmit}
                 type="submit"
-                id="btnsubmit"
-              >
+                id="btnsubmit">
                 Assign
               </button>
             </div>
