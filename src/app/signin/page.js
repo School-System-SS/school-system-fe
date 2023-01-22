@@ -38,6 +38,7 @@ export default function SignIn() {
         localStorage.setItem("access", JSON.stringify(res.data["access"]));
         localStorage.setItem("refresh", JSON.stringify(res.data["refresh"]));
         localStorage.setItem("username", JSON.stringify(username));
+        localStorage.setItem("userId", JSON.stringify(res.data.user_id));
         setIsStudent(localStorage.setItem("is_student", JSON.stringify(res.data.is_student)));
         setIsTeacher(localStorage.setItem("is_teacher", JSON.stringify(res.data.is_teacher)));
         setIsSupervisor(localStorage.setItem("is_supervisor", JSON.stringify(res.data.is_supervisor)));
