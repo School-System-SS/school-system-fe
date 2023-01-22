@@ -1,5 +1,5 @@
 'use client';
-import StudentHeader from "../../student-dashborad/StudentHeader";
+import StudentHeader from "../../student-dashboard/StudentHeader";
 
 function details() {
 
