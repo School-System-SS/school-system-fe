@@ -3,7 +3,7 @@ import "../styles/Tuition.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Tuition() {
-    
+
     return (
         <section id='Tuition'>
             <h3>Tuition</h3>
@@ -28,101 +28,101 @@ export default function Tuition() {
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr class="hover:bg-lighter bg-gray-100 border-b">
+                                <tbody className="hover:text-lighter">
+                                    <tr class="hover:bg-lighter hover:text-[#FFFFFF] bg-gray-100 border-b">
                                         <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">First--Fifth Grade</td>
-                                        <td class="litext-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             800$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1000$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1200$
                                         </td>
                                     </tr>
-                                    <tr class="hover:bg-lighter bg-gray-100 border-b">
+                                    <tr class="hover:bg-lighter  bg-gray-100 border-b">
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">sixth Grade</td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1200$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1500$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1700$
                                         </td>
                                     </tr>
                                     <tr class="hover:bg-lighter bg-gray-100 border-b">
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">seventh Grade </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1200$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1600$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1800$
                                         </td>
                                     </tr>
                                     <tr class="hover:bg-lighter bg-gray-100 border-b">
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Eighth Grade</td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1300$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1700$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1900$
                                         </td>
                                     </tr>
                                     <tr class="hover:bg-lighter bg-gray-100 border-b">
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"> ninth Grade</td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1400$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1800$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             2000$
                                         </td>
                                     </tr>
                                     <tr class="hover:bg-lighter bg-gray-100 border-b">
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"> Tenth Grade</td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1500$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1900$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             2200$
                                         </td>
                                     </tr>
 
                                     <tr class="hover:bg-lighter bg-gray-100 border-b">
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"> Eleventh Grade</td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1600$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             2000$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             2400$
                                         </td>
                                     </tr>
                                     <tr class="hover:bg-lighter bg-gray-100 border-b">
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"> twelfth Grade</td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             1800$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             2200$
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <td class=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             2700$
                                         </td>
                                     </tr>
