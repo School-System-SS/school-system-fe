@@ -1,7 +1,54 @@
-import React from "react";
+import React,{useState} from "react";
 import "../../styles/teacher.css";
+import axios from "axios";
+
 
 export default function Create_assignment({ handleChange, formInputData, handleSubmit }) {
+  
+// const [assignment,setassignment]=useState({})
+
+  const createOneAssignment=(e)=>{
+    e.preventDefault()
+
+
+    const URL = 'https://school-system-final-project.herokuapp.com/api/v1/assignment/create/';
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
+
+    // title = models.CharField(max_length=255)
+    // description = models.CharField(max_length=1000, default="")
+    // due_date = models.DateTimeField()
+    // points = models.FloatField()
+    // course = models.ForeignKey(CourseModel, on_delete=models.CASCADE, related_name='assignments')
+    // teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='assignments')
+
+    let body = {
+      title: e.target.Title.value,
+      description:e.target.message.value,
+      due_date: e.target.DueDate.value,
+      points:10,
+      course: 1,
+      teacher:JSON.parse(localStorage.getItem("userId"))
+
+      
+    };
+
+    axios
+    .post(URL,body)
+    .then((res)=>{
+      console.log(res.data)
+
+    })
+    
+    .catch((err)=>{
+      console.log("erorrr")
+    })
+
+
+  }
 
   return (
 
@@ -16,7 +63,7 @@ export default function Create_assignment({ handleChange, formInputData, handleS
         </div>
 
         <div class="rounded bg-white max-w-md  overflow-hidden shadow-xl p-9 content-center">
-          <form class="space-y-4" action="#" method="POST">
+          <form class="space-y-4" action="#" method="POST" onSubmit={createOneAssignment} >
             <input type="hidden" name="remember" value="True" />
             <div class="rounded-md shadow-sm -space-y-px">
               <div class="grid gap-6">
