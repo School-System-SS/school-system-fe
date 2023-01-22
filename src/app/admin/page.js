@@ -6,6 +6,7 @@ import DisplayCreate from "./DisplayCreate";
 import React, { useState, useEffect, use } from "react";
 import Unauthorized from "../../components/Unauthorized";
 
+
 export default function AdminView() {
   const [showContent, setContent] = useState(false);
 
@@ -24,6 +25,7 @@ export default function AdminView() {
       {!showContent && (
         <Unauthorized />
       )}
+      
     </>
   );
 }
