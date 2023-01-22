@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 
-/home/abeer/school-system-fe/src/app/admin-student
 
 export default function TableOfTeachers() {
   const [allTeachers, setAllTeachers] = useState("")

@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect, use } from "react";
 import TableOfTeachers from "./TableOfTeachers";
 import AdminHeader from "../admin/adminHeader";
