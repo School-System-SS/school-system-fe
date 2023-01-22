@@ -25,17 +25,7 @@ export default function AdminView() {
       {!showContent && (
         <Unauthorized />
       )}
-      <section >
-        {/* <p className="admin-grid-2">ddd</p> */}
-        <AdminHeader/>
-        
-        <DisplayCreate/>
-        
-        
-        
-        
-        
-      </section>
+      
     </>
   );
 }
