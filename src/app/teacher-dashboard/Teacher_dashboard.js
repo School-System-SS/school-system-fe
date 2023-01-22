@@ -1,41 +1,181 @@
 "use client";
 import React from "react";
+import { useRouter } from 'next/navigation';
+import TeacherDashboardHeader from "../teacher-gradebook/Dashboard/TeacherDashboardHeader";
+import LogoutButton from "../teacher-gradebook/Dashboard/LogoutButton";
+
 
 export default function Teacher_dashboard() {
+  const router = useRouter();
+
   return (
     <>
-      {/* <section className="mt-[7%]">
-     <div class="mx-auto px-4 mt-100">
-       <div class='relative m-0 shadow-lg flex bg-white ml-12 mb-50 mt-4 max-w-md w-30  p-2'>
-         <div class='flex-no-shrink'>
-           <img alt='' class='w-64 h-64 block mx-auto' src='https://media.discordapp.net/attachments/1023858493624680450/1064839999092183060/course_study.png'/>
-         </div>
-         <div class='flex-1 card-block relative '>
-           <div class="p-6">
-             <h4 class='font-medium text-2xl mb-3'>math</h4>
-             <p class='leading-normal'> grade</p>
-             <p class="text-sm text-grey block mt-6">time</p>
-             <a class='-m-4 w-12 h-12 bg-blue-dark flex items-center justify-center text-center no-underline rounded-full text-white hover:bg-blue-darker absolute pin-t pin-r' href='#'>
-               <i class='text-xl fa fa-plus'></i>
-             </a>
-           </div>
-         </div>
-       </div>
-     </div>
-     </section> */}
+      {/* <TeacherDashboardHeader />
 
-      <section className="mt-[7%]">
-        <div class="w-3 lg:w-1/2 p-3 mb-30 max-w-md">
-          <div class="flex flex-col lg:flex-row rounded overflow-hidden h-auto lg:h-32 border shadow shadow-lg">
-            <img class="block h-auto w-full lg:w-48 flex-none bg-cover h-24" src="data:image/png;base64,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" />
+      <section className="grid grid-cols-4 gap-4 content-around ml-[40%] w-full">
+        <div class=" p-3 mt-5 " >
+          <div class="flex flex-col lg:flex-row rounded overflow-hidden lg:h-32 border shadow shadow-lg">
+            <img src="/assets/CourseName.png" />
             <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-              <div class="text-black font-bold text-xl mb-9 leading-tight">course name</div>
-              <p class="text-grey-darker text-base">grade  || time</p>
-
+              <a href="/teacher-assignment">
+              course name
+              </a>
+              <p class="text-grey-darker text-base">grade  ||  time</p>
             </div>
           </div>
         </div>
+      </section> */}
+
+      <section className="flex">
+
+        <section className="h-full w-[30%] flex flex-row">
+          <div
+            id="view"
+            className="text-[#FFFFFF] bg-darker rounded-3xl"
+            x-data="{ sidenav: true }"
+          >
+
+            <div
+              id="sidebar"
+              className="bg-white h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out"
+              x-show="sidenav"
+            >
+              <div className="space-y-6 md:space-y-10 mt-10">
+                <h1 className="font-bold text-4xl text-center md:hidden">
+                  D<span className="text-teal-600">.</span>
+                </h1>
+                <h1 className="hidden md:block font-bold text-sm md:text-xl text-center">
+                  Teacher Name<span className="text-teal-600">.</span>
+                </h1>
+                <div id="profile" className="space-y-3">
+                  <img
+                    src="/assets/Logo.svg"
+                    alt="Avatar user"
+                    className="w-10 md:w-16 rounded-full mx-auto"
+                  />
+                  <div>
+                    <h2
+                      className="font-medium text-xs md:text-sm text-center text-teal-500"
+                    >
+                      School Manegment System
+                    </h2>
+                  </div>
+                </div>
+
+                <div id="menu" className="flex flex-col space-y-2">
+                  <a
+                    href="/teacher-dashboard"
+                    className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out"
+                  >
+                    <svg
+                      className="w-6 h-6 fill-current inline-block"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                      ></path>
+                    </svg>
+                    <span className="">Dashboard</span>
+                  </a>
+
+                  <a
+                    href="/teacher-assignment"
+                    className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+                  >
+                    <svg
+                      className="w-6 h-6 fill-current inline-block"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span className="">Assignment</span>
+                  </a>
+                  <a
+                    href="/teacher-gradebook"
+                    className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+                  >
+                    <svg
+                      className="w-6 h-6 fill-current inline-block"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"
+                      ></path>
+                      <path
+                        d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"
+                      ></path>
+                    </svg>
+                    <span className="">Gradebook</span>
+                  </a>
+                  <LogoutButton />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+        <section className="flex items-stretch gap-4 mt-5">
+          <div>
+
+            <a href="/teacher-assignment" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+              <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/assets/CourseName.png" alt="" />
+              <div class="flex flex-col justify-between p-4 leading-normal hover:bg-lime-200">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Course Name</h5>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Grade || Time</p>
+              </div>
+            </a>
+          </div>
+
+          <div>
+
+            <a href="/teacher-assignment" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+              <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/assets/CourseName.png" alt="" />
+              <div class="flex flex-col justify-between p-4 leading-normal hover:bg-lime-200">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Course Name</h5>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Grade || Time</p>
+              </div>
+            </a>
+          </div>
+
+          <div>
+
+            <a href="/teacher-assignment" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+              <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/assets/CourseName.png" alt="" />
+              <div class="flex flex-col justify-between p-4 leading-normal hover:bg-lime-200">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Course Name</h5>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Grade || Time</p>
+              </div>
+            </a>
+          </div>
+
+
+
+
+
+        </section>
+
       </section>
+
+
+
+
+
+
+
     </>
   )
 }
