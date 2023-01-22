@@ -61,7 +61,7 @@ export default function Create_assignment({ handleChange, formInputData, handleS
 
             <div>
               <button
-                className="bg-darker py-2 px-4 rounded text-white lg:mt-0 md:mt-2 lg:w-fit md:w-full max-[640px]:mt-2 max-[640px]:w-full sm:w-full hover:bg-main"
+                className="bg-darker text-[#FFFFFF] py-2 px-4 rounded text-white lg:mt-0 md:mt-2 lg:w-fit md:w-full max-[640px]:mt-2 max-[640px]:w-full sm:w-full hover:bg-main"
                 onClick={handleSubmit}
                 type="submit"
                 id="btnsubmit"

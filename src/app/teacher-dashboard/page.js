@@ -1,6 +1,5 @@
 "use client";
 
-import TeacherDashboardHeader from "../teacher-gradebook/Dashboard/TeacherDashboardHeader";
 import Teacher_dashboard from "./Teacher_dashboard";
 import React, { useState, useEffect, use } from "react";
 import Unauthorized from "../../components/Unauthorized";
@@ -15,10 +14,8 @@ export default function TeacherDasborad() {
   return (
     <>
       {showContent && (
-        <section>
-          <TeacherDashboardHeader />
-          <Teacher_dashboard />
-        </section>
+
+        <Teacher_dashboard />
       )}
       {!showContent && <Unauthorized />}
     </>

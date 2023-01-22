@@ -16,7 +16,7 @@ export default function view_assignment() {
     <>
       {showContent && (
         <section>
-          <TeacherDashboardHeader />
+          {/* <TeacherDashboardHeader />. */}
           <DiplayFormDataInTable />
         </section>
       )}
