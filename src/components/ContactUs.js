@@ -93,14 +93,14 @@ export default function ContactUs(props) {
               name="message_area"
             />
 
-            <button
-              className="form_inputs text_area_input submitButton"
-              onClick={ShowToast}
-              type="submit"
-              id="btnsubmit"
-            >
-              Submit
-            </button>
+              <button
+                className="form_inputs text_area_input submitButton"
+                onClick={ShowToast}
+                type="submit"
+                id="btnsubmit"
+              >
+                Submit
+              </button>
           </form>
         </div>
       </Container>
