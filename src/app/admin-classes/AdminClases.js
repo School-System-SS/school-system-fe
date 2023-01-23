@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
+import { useRouter } from 'next/navigation';
 
 
 
 
 export default function AdminClases() {
+    const router=useRouter()
     const [allCourses, setallCourses] = useState("")
     const COURSES_URL =
         "https://school-system-final-project.herokuapp.com/api/v1/course/get-all/";
@@ -41,6 +43,12 @@ export default function AdminClases() {
 
     }
 
+    function handelOpenCourseUsers(item){
+        router.push("/admin-studentList")
+        
+        
+    }
+
 
 
 
@@ -71,11 +79,11 @@ export default function AdminClases() {
                                 {allCourses && allCourses.map((c) => {
                                     if (item.name == c.name) {
                                         return (
-                                            <div class="flex items-center ml-[1%]   py-3 w-[15%]  bg-lighter text-[#FFFFFF] rounded-lg " role="alert">
+                                            <div  onClick={()=>handelOpenCourseUsers(item)}   class="flex items-center ml-[1%]   py-3 w-[15%]  bg-lighter text-[#FFFFFF] rounded-lg " role="alert">
                                                 <div style={{
                                                     marginButton: 0
                                                 }} class="text-sm  text-center  ml-[5%] ">
-                                                    <p className='mb-0 h-full'>{c.grade_level}</p>
+                                                    <p className='h-full mb-0'>{c.grade_level}</p>
                                                 </div>
                                                 <div class="flex items-center ml-auto space-x-2">
                                                     <button onClick={() => handelDeleteCousres(c)} type="button" class=" text-draker  rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 " data-dismiss-target="#toast-undo" aria-label="Close">
