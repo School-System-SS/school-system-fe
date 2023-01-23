@@ -1,15 +1,16 @@
+// 'use client'
 import React from 'react'
 import LogoutButton from '../teacher-gradebook/Dashboard/LogoutButton'
 
 export function Side() {
-    
+  let TeacherName = JSON.parse(localStorage.getItem("username"))
 
-    return (
-      <section className='h-full fixed'>
 
-        <div
+  return (
+    <section className='h-full fixed'>
+      <div
         id="view"
-        className="text-[#FFFFFF] bg-darker rounded-xl h-full"
+        className="text-[#FFFFFF] bg-darker  h-full"
         x-data="{ sidenav: true }"
       >
 
@@ -19,11 +20,9 @@ export function Side() {
           x-show="sidenav"
         >
           <div className="space-y-6 md:space-y-10 mt-10">
-            <h1 className="font-bold text-4xl text-center md:hidden">
-              D<span className="text-teal-600">.</span>
-            </h1>
+
             <h1 className="hidden md:block font-bold text-sm md:text-xl text-center">
-              Teacher Name<span className="text-teal-600">.</span>
+              Welcome | {TeacherName}
             </h1>
             <div id="profile" className="space-y-3">
               <img
@@ -101,6 +100,6 @@ export function Side() {
           </div>
         </div>
       </div>
-      </section>
-    )
+    </section>
+  )
 }
