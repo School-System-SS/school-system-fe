@@ -22,7 +22,7 @@ export default function AdminHeader() {
 
           
         </Nav>
-        <span class="text-light py-2 pr-9">Welcome , AdminName</span>
+        <span class="text-light py-2 pr-9">Welcome , {JSON.parse(localStorage.getItem("username"))}</span>
         <LogoutButton />
         </Navbar.Collapse>
       </Container>

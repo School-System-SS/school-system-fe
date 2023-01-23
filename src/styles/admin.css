@@ -2,9 +2,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: baseline;
-    background: #ADA996;
-    background: -webkit-linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
-    background: linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+    background-image: url(https://img.freepik.com/free-vector/white-elegant-texture-background-style_23-2148432200.jpg?w=996&t=st=1674484847~exp=1674485447~hmac=0128226703b23b8216be52ac4cfe4cab61f9dcb28252b7d18bdfecf6676db350);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .admin-grid-1 {
