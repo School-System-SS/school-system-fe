@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
-import StudentHeader from "../../student-dashborad/StudentHeader";
+import StudentHeader from "src/app/student/student-dashboard/StudentHeader.js";
 
 function details() {
 
