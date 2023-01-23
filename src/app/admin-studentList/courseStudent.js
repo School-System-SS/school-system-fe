@@ -1,4 +1,6 @@
-import React from 'react'
+"use client";
+import React from "react";
+
 
 
 
@@ -7,7 +9,7 @@ export default function CourseStudentList() {
     return (
         
         <section className="TeacherAssignment-2">
-        <div class="mx-24 flex flex-col ">
+        <div class="mx-24 flex flex-col mt-[5%] ">
           <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
             <div class="py-2 inline-block min-w-full sm:px-8 lg:px-8">
 
