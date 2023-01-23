@@ -38,7 +38,7 @@ export default function AssignmentTeacherView() {
 
   return (
 
-    <section className="TeacherAssignment-2 ">
+    <section className="">
       <div className="mx-24 flex flex-col ">
         <div className="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
           <div className="py-2 inline-block min-w-full sm:px-8 lg:px-8">
