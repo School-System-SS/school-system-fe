@@ -22,7 +22,7 @@ export default function AssignmentTeacherView() {
     
   }
 
-
+const courseId=JSON.parse(localStorage.getItem("courseId"))
   const [getAllAssignment, setgetAllAssignment] = useState([]);
 
   const getAll = async () => {
@@ -34,7 +34,7 @@ export default function AssignmentTeacherView() {
   useEffect(() => {
     getAll()
   }, [])
-
+const filteredCourse=getAllAssignment.filter(item=>courseId==item.course)
 
   return (
 
@@ -81,7 +81,7 @@ export default function AssignmentTeacherView() {
                   </tr>
                 </thead>
                 <tbody>
-                  {getAllAssignment && getAllAssignment.map((data, index) => {
+                  {filteredCourse && filteredCourse.map((data, index) => {
                     console.log(data);
                       return (
                         <tr className="hover:bg-lighter hover:text-[#FFFFFF] bg-gray-100 border-b" key={index} >
