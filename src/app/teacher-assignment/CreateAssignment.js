@@ -23,14 +23,13 @@ export default function Create_assignment() {
       course: JSON.parse(localStorage.getItem("courseId")),
       teacher: JSON.parse(localStorage.getItem("userId"))
     };
-    console.log(body);
 
     axios
       .post(URL, body, config)
       .then((res) => {
         const STUURL = 'https://school-system-final-project.herokuapp.com/api/v1/studentAssignment/create/';
         axios
-          .post(STUURL, { course: 1, assignment: res.data.pk }, config)
+          .post(STUURL, { course: JSON.parse(localStorage.getItem("courseId")), assignment: res.data.pk }, config)
           .then((res1) => {
             alert("Create Successfully");
           })

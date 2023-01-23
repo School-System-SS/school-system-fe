@@ -61,13 +61,15 @@ export default function CreateCourse(props) {
   const handleAddingUsers = (e) => {
     if (e.target.checked) {
       setUsersList([...usersList, parseInt(e.target.value)]);
+    
     }
   };
-
+  
+  
   const handleTeacherChange = (e) => {
     setTeacher(e.target.value);
   };
-
+  
   const handleCreateCourse = (e) => {
     e.preventDefault();
     let body = {
@@ -77,6 +79,7 @@ export default function CreateCourse(props) {
       teacher: teacher,
       student: usersList,
     };
+    console.log(body);
     axios
       .post(CREATECOURSE, body, config)
       .then((res) => {

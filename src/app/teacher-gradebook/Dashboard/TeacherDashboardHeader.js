@@ -1,7 +1,6 @@
 'use client'
 import React from "react";
 import LogoutButton from "./LogoutButton";
-import SideBarCategory from "./SideBarCategory"
 
 
 export default function TeacherDashboardHeader(props) {
