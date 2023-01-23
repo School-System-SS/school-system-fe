@@ -1,85 +1,155 @@
 'use client';
 import { useState, useEffect } from "react";
 import StudentHeader from "src/app/student/student-dashboard/StudentHeader.js";
+import axios from "axios";
 
 function details() {
+    const [inDetails, setInDetails] = useState(false);
+    const REFRESH =
+        "https://school-system-final-project.herokuapp.com/api/token/refresh/";
 
-    const [data, setData] = useState([]);
+    const URL_ASSIGNMENT =
+        `https://school-system-final-project.herokuapp.com/api/v1/studentAssignment/update/${JSON.parse(localStorage.getItem("id"))["pk"]} `;
+
+    let config = {
+        headers: {
+            Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+        },
+    };
+
 
     useEffect(() => {
-        const id = JSON.parse(localStorage.getItem('id'));
-        setData([id]);
-    }, [])
+        let refreshBody = {
+            refresh: JSON.parse(localStorage.getItem("refresh")),
+        };
+        axios
+            .post(REFRESH, refreshBody)
+            .then((res) => {
+                localStorage.setItem("access", JSON.stringify(res.data.access));
+            })
+            .catch((err) => { });
+            setInDetails(true)
+    }, []);
+
+    const handleUpdateAssignment = (e) => {
+        e.preventDefault();
+        let body = {
+            attachment: e.target.attachment.value,
+
+
+        };
+        axios
+            .put(URL_ASSIGNMENT, body, config)
+            .then((res) => {
+                alert("submites");
+            })
+            .catch((err) => {
+                alert("error submited");
+            });
+    }
+
 
     return (
-        <section className="mt-[5%]">
-            <header className="px-6 py-6">
-                <ul>
-                    <li>
-                        <a href="/student/student-assignment">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="black"
-                                className="w-10 h-10"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </header>
+        <section className="mt-[8%] ">
+            <StudentHeader 
+            inDetails={inDetails}
+            />
+            <section className='w-[70%] h-full ml-[23%]'>
 
-            <StudentHeader />
 
-            {data && Array.isArray(data) && data.map((x) => {
-                return (
-                    <section className='w-[70%] h-full ml-[30%]'>
 
-                        <div id="staticModal" data-modal-backdrop="static" className="break-words md:inset-0 h-modal md:h-full">
-                            <div className="relative w-full h-full max-w-2xl md:h-auto rounded-xl border">
-                                <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                    <div className="flex items-start justify-between text-[#FFFFFF] bg-darker p-4 border-b rounded-t dark:border-gray-600">
-                                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                                            {x.assignmentName}
-                                        </h3>
+                <div id="staticModal" data-modal-backdrop="static" className="break-words md:inset-0 h-modal md:h-full">
+                    <div className="relative w-full h-full max-w-2xl md:h-auto rounded-xl border">
+                        <div className="relative bg-white rounded-lg shadow ">
+                            <div className="flex items-start justify-between text-[#FFFFFF] bg-main p-4 border-b rounded-t">
+                                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                                    {JSON.parse(localStorage.getItem("item"))["title"]}
+                                </h3>
 
-                                        <p>{x.dueDate}</p>
+                                <p>{JSON.parse(localStorage.getItem("item"))["dueDate"]}</p>
 
-                                    </div>
-                                    <div className="p-6 space-y-6">
-                                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Description</h3>
-                                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 ">
-                                            {x.description}
-                                        </p>
-                                    </div>
+                            </div>
+                            <div className="p-6 space-y-6">
+                                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Description</h3>
+                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 ">
+                                    {JSON.parse(localStorage.getItem("item"))["description"]}
+                                </p>
+                            </div>
 
-                                    <div className="flex items-center justify-center w-[90%] ml-[5%]">
-                                        <label for="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                                            <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                                <svg aria-hidden="true" className="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                                <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span className="font-semibold">Click to upload</span> or drag and drop</p>
-                                                <p className="text-xs text-gray-500 dark:text-gray-400">PDF</p>
+
+
+                            <form onSubmit={handleUpdateAssignment} >
+                                <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700">
+                                    <div class="flex items-center justify-between px-3 py-2 border-b">
+                                        <div class="flex flex-wrap items-center divide-gray-200 sm:divide-x dark:divide-gray-600">
+                                            <div class="flex items-center space-x-1 sm:pr-4">
+                                                <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path></svg>
+                                                    <span class="sr-only">Attach file</span>
+                                                </button>
+                                                <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                                                    <span class="sr-only">Embed map</span>
+                                                </button>
+                                                <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+                                                    <span class="sr-only">Upload image</span>
+                                                </button>
+                                                <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                                    <span class="sr-only">Format code</span>
+                                                </button>
+                                                <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clip-rule="evenodd"></path></svg>
+                                                    <span class="sr-only">Add emoji</span>
+                                                </button>
                                             </div>
-                                            <input id="dropzone-file" type="file" className="hidden" />
-                                        </label>
+                                            <div class="flex flex-wrap items-center space-x-1 sm:pl-4">
+                                                <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                                                    <span class="sr-only">Add list</span>
+                                                </button>
+                                                <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
+                                                    <span class="sr-only">Settings</span>
+                                                </button>
+                                                <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                                    <span class="sr-only">Timeline</span>
+                                                </button>
+                                                <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                                    <span class="sr-only">Download</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="button" data-tooltip-target="tooltip-fullscreen" class="p-2 text-gray-500 rounded cursor-pointer sm:ml-auto hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                                            <span class="sr-only">Full screen</span>
+                                        </button>
+                                        <div id="tooltip-fullscreen" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Show full screen
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
                                     </div>
-
-                                    <div className="flex items-center p-6 space-x-2 rounded-b dark:border-gray-600">
-                                        <button data-modal-hide="staticModal" type="button" className="text-main bg-white hover:bg-darker rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-[#FFFFFF]">Submit</button>
+                                    <div class="px-4 py-2 bg-white rounded-b-lg ">
+                                        <label for="editor" class="sr-only">Publish post</label>
+                                        <textarea id="editor" name="attachment" rows="8" class="block w-full px-3 text-sm text-gray-800 bg-white border-0  focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write an article..." required></textarea>
                                     </div>
                                 </div>
-                            </div>
+                                <button type="submit" class="inline-flex items-center mb-3 ml-[40%] px-5 py-2.5 text-sm font-medium text-center text-white bg-main rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-lighter">
+                                    Submit
+                                </button>
+                            </form>
+
+
+
                         </div>
-                    </section>
-                )
-            })}
+                    </div>
+                </div>
+
+            </section>
+
         </section>
     )
 }
