@@ -1,15 +1,15 @@
 .admin-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    
-    background-color: lighter
-    
+    align-items: baseline;
+    background: #ADA996;
+    background: -webkit-linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    background: linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
 }
 
 .admin-grid-1 {
     grid-column-start: 1;
     grid-column-end: 2;
-
 }
 
 .admin-grid-2  {
