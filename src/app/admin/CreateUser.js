@@ -110,15 +110,14 @@ export default function CreateUser() {
 
   return (
     <div className="flex items-center justify-center p-12 admin-grid-2">
-      <div className="mx-auto w-full max-w-[550px]">
-        <h2 className="flex items-center justify-center p-6 text-xl font-bold">
+      <div className=" w-full max-w-[550px]">
+        <h2 className="flex items-center justify-center pt-6 text-xl font-bold">
           Create New User
         </h2>
-        <section className="relative py-3 sm:max-w-xl sm:mx-6 ">
-          <section className="relative px-4 py-10 bg-white shadow-inner shadow-lighter sm:rounded-3xl sm:p-20 ">
+          <section className="relative px-4 py-10 border-l border-r sm:rounded-3xl sm:p-20 ">
             <section className="max-w-md mx-auto">
               <form onSubmit={handleCreateUser}>
-                <div className="mb-2">
+                <div className="mb-3">
                   <label
                     for="name"
                     className="block mb-2 text-base font-medium text-darker"
@@ -247,7 +246,6 @@ export default function CreateUser() {
               </form>
             </section>
           </section>
-        </section>
       </div>
     </div>
   );
