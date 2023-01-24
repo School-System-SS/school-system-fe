@@ -2,6 +2,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import swal from "sweetalert";
 
 
 
@@ -32,7 +33,13 @@ export default function TableOfTeachers() {
     axios
     .delete(DELETE_TEACHER+item.pk,config)
     .then((res)=>{
-      alert("Deleted")
+      swal({
+        title: "Good job!",
+        text: "Deleted Successfully",
+        icon: "success",
+        buttons: false,
+        timer: 1000,
+      });
     })
     
   }

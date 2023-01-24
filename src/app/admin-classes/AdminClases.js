@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import swal from "sweetalert";
 
 export default function AdminClases() {
   const router = useRouter();
@@ -40,8 +41,14 @@ export default function AdminClases() {
 
   const handelDeleteCousres = (item) => {
     axios.delete(DELETE_COURSES + item.pk, config).then((res) => {
-      alert("Deleted");
-      router.push("/admin-classes");
+      swal({
+        title: "Good job!",
+        text: "Deleted Successfully",
+        icon: "success",
+        buttons: false,
+        timer: 1000,
+      });
+      setTimeout(window.location.reload(), 1500)
     });
   };
 

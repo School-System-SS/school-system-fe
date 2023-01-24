@@ -9,6 +9,7 @@ export default function Services() {
       <h1 className="text-3xl text-center mb-4">What We Offer</h1>
       <div className="my-3 w-28 h-1 div-color-design missionLine"></div>
       <div className="serviceWrapper">
+        
         <div class="a-box">
           <div class="img-container">
             <div class="img-inner">
