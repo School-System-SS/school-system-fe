@@ -121,7 +121,6 @@ export default function SideBar(props) {
                           CurrAssignment(item)                          
                           }}> {item.title}</span>
                       </a>
-             
                     </section>
                   )
                 })}

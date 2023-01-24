@@ -31,7 +31,6 @@ export default function Create_assignment() {
         axios
           .post(STUURL, { course: JSON.parse(localStorage.getItem("courseId")), assignment: res.data.pk }, config)
           .then((res1) => {
-            // alert("Create Successfully");
             window.location.reload();
 
           })
