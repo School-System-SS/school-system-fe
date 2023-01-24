@@ -4,6 +4,7 @@ import Student_dashborad from "./Student_dashborad";
 import StudentHeader from "./StudentHeader";
 import React, { useState, useEffect, use } from "react";
 import Unauthorized from "../../../components/Unauthorized";
+import SideBar from "../SideB";
 
 export default function StudentDasborad() {
   const [showContent, setContent] = useState(false);
@@ -15,9 +16,10 @@ export default function StudentDasborad() {
   return (
     <>
       {showContent && (
-        <section>
-          <StudentHeader />
+        <section className="flex">
+          <SideBar/>
           <Student_dashborad />
+          
         </section>
       )}
       {!showContent && <Unauthorized />}
