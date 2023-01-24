@@ -15,10 +15,10 @@ export default function LandingPage() {
     <>
       <Header />
       <Carousel />
-      <AboutUs />
       <Services />
       <Curriculum />
       <Tuition />
+      <AboutUs />
       <ContactUs />
       <Up />
       <Footer />

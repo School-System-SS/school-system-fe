@@ -16,3 +16,9 @@
     line-height: 1.5;
 
 }
+
+.missionLine {
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    /* rotate: 45deg; */
+}

@@ -1,17 +1,21 @@
-import { Container } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
+
 import "../styles/AboutUs.css";
+import "../styles/kandingPage-design.css";
+import Image from "next/image";
 
 export default function AboutUS() {
   return (
-    <section id="aboutUs">
-      <h3>Mission & Vision</h3>
+    <section id="aboutUs" className="flex flex-col text-center item-center bg-main">
+      <div className="relative">
+      <h1 className="text-3xl text-white">Mission & Vision</h1>
+      <div className="my-3 w-28 h-1 div-color-design missionLine"></div>
+      </div>
 
-      <Container>
-        <p>
-          Academics at the Rock School is committed to providing a quality, college preparatory program designed for students in the Professional Division.  We blend cutting edge technology with a progressive individualized academic plan to help students achieve a successful balance between their academics and intensive dance training.  Chosen for the talent and potential as dancers, Rock Academics students benefit from high caliber dance training with world-class instructors and choreographers in addition to a strong college preparatory program.  Our integrated approach to learning in combination with a nurturing residential life program provides young artists with a supportive environment and the tools they need to meet life's challenges with confidence, self-discipline, enthusiasm, and the highest standards of personal integrity.
+      <div className="px-96">
+        <p className="text-white font-light text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </p>
-      </Container>
+      </div>
     </section>
   );
 }

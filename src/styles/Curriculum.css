@@ -1,17 +1,32 @@
-.Curriculum{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
+ .Curriculum{
+display:flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+gap: 4rem;
 
 }
 #Curriculum h3 {
     text-align: center;
-    padding: 0 0 2rem 0;
+    /* padding: 0 0 1rem 0; */
+    margin-bottom: 1rem;
+    padding: 3px;
     font-size: 22px;
-    font-weight: bold;
+    font-weight:600;
+    /* background-color: #5c5d9a; */
 }
 #Curriculum {
     padding: 2rem 0;
+} 
+
+.courseID-1{
+    background-image: url();
+}
+
+.courseID-2{
+    
+}
+
+.courseID-3{
+    
 }
