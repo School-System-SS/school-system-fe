@@ -11,9 +11,9 @@ export default function ListViewAssignment() {
         <div className=" flex justfiy-between gap-40">
             <SideBar/>
 
-            {/* {
+            {
                 TableView ? <TableAssignmentListOfTeacher/> : <EmptyBackground />
-            } */}
+            }
 
         </div>
     )

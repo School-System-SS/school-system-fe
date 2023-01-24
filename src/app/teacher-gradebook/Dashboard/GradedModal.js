@@ -1,11 +1,8 @@
 'use client'
-
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-
-export default function GradedModal({ show, close, fName, lName, stditem }) {
-
+export default function GradedModal({ show, close, fName, lName, stditem, ds }) {
     const URL_ASSIGNMENT = `https://school-system-final-project.herokuapp.com/api/v1/studentAssignment/update/${stditem.pk}`;
 
     let config = {
@@ -14,14 +11,11 @@ export default function GradedModal({ show, close, fName, lName, stditem }) {
         },
     };
 
-
-
     const handleUpdateAssignment = (e) => {
         e.preventDefault();
+
         let body = {
             grade: e.target.points.value,
-
-
         };
         console.log(body, 'dffffffffffffffffffffffffffffffffffffffff');
         axios
@@ -42,10 +36,10 @@ export default function GradedModal({ show, close, fName, lName, stditem }) {
 
                 <form onSubmit={handleUpdateAssignment}>
 
-                    <div id="extralarge-modal" className="fixed ml-[20%] z-50 w-full p-2 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+                    <div id="extralarge-modal" className="fixed ml-[30%] mb-5 z-50 w-full p-10 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
                         <div className="relative w-[80%] h-full max-w-5xl md:h-auto">
-                            <div className="relative bg-lighter rounded-lg shadow dark:bg-gray-700">
-                                <div className="flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600">
+                            <div className="relative bg-[#FFFFFF] shadow-xl rounded-lg shadow dark:bg-gray-700">
+                                <div className="flex items-center justify-between p-5 border-b rounded-t bg-main text-[#FFFFFF] dark:border-gray-600">
                                     <h3 className="text-xl font-medium text-gray-900 dark:text-white font-bold text-3xl">
                                         {fName} {lName}
                                     </h3>
@@ -57,8 +51,17 @@ export default function GradedModal({ show, close, fName, lName, stditem }) {
 
                                 <div className="p-6 space-y-6">
                                     <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 text-2xl font-bold">
-                                        Status : {stditem.is_submitted ? <span className="text-base"> Submited </span> : <span className="text-base">Not Submited Yet</span>}
+                                        Status: {stditem.is_submitted ? <span className="text-base"> Submited </span> : <span className="text-base">Not Submited Yet</span>}
                                     </p>
+                                 
+                                    
+                                    <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 font-bold text-2xl">
+                                    Description:
+                                    </p>
+                                    <p>
+                                    {ds}
+                                    </p>
+
                                     <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 font-bold text-2xl">
                                         Attachment
                                     </p>
@@ -74,15 +77,15 @@ export default function GradedModal({ show, close, fName, lName, stditem }) {
                                             name="points"
                                             id="points"
                                             defaultValue={stditem.grade}
-                                            className="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                            className=" rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                         />
                                     </p>
 
                                 </div>
 
-                                <div className="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                                <div className="flex bg-main text-[#FFFFFF] items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
                                     {/* <button data-modal-hide="extralarge-modal" type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button> */}
-                                    <button type="submit" className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Save</button>
+                                    <button type="submit" className="bg-lighter py-2 px-4 rounded text-white lg:mt-0 md:mt-2 lg:w-fit md:w-full max-[640px]:mt-2 max-[640px]:w-full sm:w-full hover:bg-darker hover:cursor-pointer no-underline">Save</button>
                                 </div>
                             </div>
                         </div>
