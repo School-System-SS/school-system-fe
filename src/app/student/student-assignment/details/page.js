@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import StudentHeader from "src/app/student/student-dashboard/StudentHeader.js";
 import axios from "axios";
+import SideBar from "../../SideB";
 
 function details() {
     const [inDetails, setInDetails] = useState(false);
@@ -50,16 +51,16 @@ function details() {
 
 
     return (
-        <section className="mt-[8%] ">
-            <StudentHeader 
+        <section className="flex ">
+            <SideBar 
             inDetails={inDetails}
             />
-            <section className='w-[70%] h-full ml-[23%]'>
+            <section className='w-[70%] h-full ml-[20%] mt-[7%]'>
 
 
 
                 <div id="staticModal" data-modal-backdrop="static" className="break-words md:inset-0 h-modal md:h-full">
-                    <div className="relative w-full h-full max-w-2xl md:h-auto rounded-xl border">
+                    <div className="relative w-full h-full max-w-2xl border md:h-auto rounded-xl">
                         <div className="relative bg-white rounded-lg shadow ">
                             <div className="flex items-start justify-between text-[#FFFFFF] bg-main p-4 border-b rounded-t">
                                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
