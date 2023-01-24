@@ -70,7 +70,7 @@ export default function Assignment() {
   return (
     <section>
       
-      <section className="w-[130%]  mt-[10%] ml-[15%]">
+      <section className="w-full  mt-[75px] ml-[380px]">
         <div className="relative overflow-x-auto border shadow-md sm:rounded-xl ">
           <table className="w-full text-sm text-center text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-[#FFFFFF] dark:text-gray-400 border bg-main">

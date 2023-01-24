@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import swal from "sweetalert";
 
 export default function CreateCourse(props) {
   const router = useRouter();
@@ -84,10 +85,22 @@ export default function CreateCourse(props) {
     axios
       .post(CREATECOURSE, body, config)
       .then((res) => {
-        alert("course added");
+        swal({
+          title: "Good job!",
+          text: "Submitted Successfully",
+          icon: "success",
+          buttons: false,
+          timer: 1000,
+        });
       })
       .catch((err) => {
-        alert("error adding course");
+        swal({
+          title: "Error!",
+          text: "Something wrong happened",
+          icon: "error",
+          buttons: false,
+          timer: 1000,
+        })
       });
   };
 

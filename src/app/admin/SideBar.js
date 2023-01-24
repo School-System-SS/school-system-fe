@@ -40,14 +40,14 @@ export default function SideBar() {
             <div id="menu" className="flex flex-col space-y-2">
               <a
                 href="/admin"
-                className="text-sm font-medium text-gray-700 py-2 px-2  hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out flex"
+                className="text-sm text-[#FFFFFF] no-underline font-medium text-gray-700 py-2 px-2  hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out flex"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
-                  stroke="currentColor"
+                  stroke="white"
                   className="w-6 h-6 mr-1"
                 >
                   <path
@@ -57,18 +57,18 @@ export default function SideBar() {
                   />
                 </svg>
 
-                <span className="">Create User</span>
+                <span className="text-[#FFFFFF]">Create User</span>
               </a>
               <a
                 href="/admin-classes"
-                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out flex"
+                className="text-sm text-[#FFFFFF] no-underline font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out flex"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
-                  stroke="currentColor"
+                  stroke="white"
                   className="w-6 h-6 mr-1"
                 >
                   <path
@@ -77,18 +77,18 @@ export default function SideBar() {
                     d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
                   />
                 </svg>
-                <span className="">Courses</span>
+                <span className="text-[#FFFFFF]">Courses</span>
               </a>
               <a
                 href="/admin-student"
-                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out flex"
+                className="text-sm text-[#FFFFFF] no-underline font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out flex"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
-                  stroke="currentColor"
+                  stroke="white"
                   className="w-6 h-6 mr-1"
                 >
                   <path
@@ -98,18 +98,18 @@ export default function SideBar() {
                   />
                 </svg>
 
-                <span className="">List of Students</span>
+                <span className="text-[#FFFFFF]">List of Students</span>
               </a>
               <a
                 href="/admin-teacher"
-                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out flex"
+                className="text-sm text-[#FFFFFF] no-underline font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out flex"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
-                  stroke="currentColor"
+                  stroke="white"
                   className="w-6 h-6 mr-1"
                 >
                   <path
@@ -118,7 +118,7 @@ export default function SideBar() {
                     d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                   />
                 </svg>
-                <span className="">List of Teachers</span>
+                <span className="text-[#FFFFFF]">List of Teachers</span>
               </a>
               <div className="p-2">
                 

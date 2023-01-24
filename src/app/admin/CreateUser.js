@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../styles/admin.css";
+import swal from "sweetalert";
 
 export default function CreateUser() {
   const [isStudent, setIsStudent] = useState(false);
@@ -100,11 +101,33 @@ export default function CreateUser() {
         axios
           .post(urlToUSe, CreateBody, config)
           .then((res) => {
-            alert("added");
+            swal({
+              title: "Good job!",
+              text: "Submitted Successfully",
+              icon: "success",
+              buttons: false,
+              timer: 1000,
+            });
           })
-          .catch((err) => {});
+          .catch((err) => {
+            swal({
+              title: "Error!",
+              text: "Something wrong happened",
+              icon: "error",
+              buttons: false,
+              timer: 1000,
+            })
+          });
       })
-      .catch((err) => {});
+      .catch((err) => {
+        swal({
+          title: "Error!",
+          text: "Something wrong happened",
+          icon: "error",
+          buttons: false,
+          timer: 1000,
+        })
+      });
 
   };
 

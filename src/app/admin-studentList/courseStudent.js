@@ -3,6 +3,7 @@ import '../../styles/admin-list.css'
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import swal from "sweetalert";
 
 export default function CourseStudentList() {
   const router = useRouter();
@@ -81,10 +82,23 @@ export default function CourseStudentList() {
     axios
       .put(UPDATECOURSE, body, config)
       .then((res) => {
-        alert("course updated");
+        swal({
+          title: "Good job!",
+          text: "Updated Successfully",
+          icon: "success",
+          buttons: false,
+          timer: 1000,
+        });
+        router.push('/admin-classes')
       })
       .catch((err) => {
-        alert("error adding course");
+        swal({
+          title: "Error!",
+          text: "Something wrong happened",
+          icon: "error",
+          buttons: false,
+          timer: 1000,
+        })
       });
   }
 
