@@ -115,7 +115,7 @@ export default function Teacher_dashboard() {
         </section>
       </section>
 
-      <section className=" justify-center mr-[400px] mt-5 ">
+      <section className="flex justify-center mr-[400px] mt-5 ">
       <div className="container  mt-2  ">
         {getAllCourses && getAllCourses.map((item) => {
 
