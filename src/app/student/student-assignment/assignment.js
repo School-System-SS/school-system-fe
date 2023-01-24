@@ -3,9 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { redirect, useRouter } from "next/navigation";
-import StudentHeader from "../student-dashboard/StudentHeader";
 
-// data.description
 
 export default function Assignment() {
   const [getAllAssignment, setgetAllAssignment] = useState([]);
@@ -52,7 +50,7 @@ export default function Assignment() {
                   };
                   dataArr.push(assignmentObject);
                   setMainAssignment([...dataArr, assignmentObject]);
-                  console.log(res.data)
+                 
                 });
             });
           })
@@ -72,7 +70,7 @@ export default function Assignment() {
   return (
     <section>
       
-      <section className="w-[150%] h-full my-[10%] ml-[22%]">
+      <section className="w-[130%]  mt-[10%] ml-[15%]">
         <div className="relative overflow-x-auto border shadow-md sm:rounded-xl ">
           <table className="w-full text-sm text-center text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-[#FFFFFF] dark:text-gray-400 border bg-main">

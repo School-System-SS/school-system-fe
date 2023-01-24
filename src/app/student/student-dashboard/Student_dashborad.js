@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from 'next/navigation';
+import '../student-dashboard/page.css'
 
 
 
@@ -30,7 +31,7 @@ export default function Student_dashborad() {
       .get(URL_STUDENT_COURSE, config)
       .then((res) => {
         setgetAllCourses(res.data)
-        console.log(res.data)
+      
 
 
       }
@@ -40,22 +41,38 @@ export default function Student_dashborad() {
   }, [])
   return (
 
-    <section className="flex flex-wrap justify-center gap-4 mt-[5%] ml-[15%]">
-      {getAllCourses && getAllCourses.map((item) => {
-        return (
+    <section className=" justify-center ml-[300px]  container mt-2   ">
+  {/* <div className="container  mt-2  "> */}
+        {getAllCourses && getAllCourses.map((item) => {
+          return (
 
-          <div>
-              <a  onClick={() => SendPK(item)} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/assets/CourseName.png" alt="CourseName" />
-                <div className="flex flex-col justify-between p-4 leading-normal hover:bg-lime-200">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{item.name}</h5>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{item.grade_level} || {item.time}</p>
+
+
+              <div onClick={() => SendPK(item)} className=" services">
+                <div className="face face1">
+                  <div className="content ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="ml-4 w-16 h-16">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                    </svg>
+
+                    <h3>{item.name}</h3>
+                  </div>
                 </div>
-              </a>
-            </div>
-       
-        )
-      })}
+                <div className="face face2">
+                  <div className="content mt-[100px]">
+                    <p>{item.grade_level} at  {item.time}</p>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+)
+})}
+{/* </div> */}
+      
     </section>
 
   )

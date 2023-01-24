@@ -55,11 +55,11 @@ function details() {
             <SideBar 
             inDetails={inDetails}
             />
-            <section className='w-[70%] h-full ml-[20%] mt-[7%]'>
+            <section className='w-[70%] h-full ml-[35%] mt-[5%]'>
 
 
 
-                <div id="staticModal" data-modal-backdrop="static" className="break-words md:inset-0 h-modal md:h-full">
+                <div id="staticModal" data-modal-backdrop="static" className="rounded-lg break-words md:inset-0 h-modal md:h-full">
                     <div className="relative w-full h-full max-w-2xl border md:h-auto rounded-xl">
                         <div className="relative bg-white rounded-lg shadow ">
                             <div className="flex items-start justify-between text-[#FFFFFF] bg-main p-4 border-b rounded-t">
