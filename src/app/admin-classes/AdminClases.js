@@ -39,9 +39,9 @@ export default function AdminClases() {
   }, []);
 
   const handelDeleteCousres = (item) => {
-    
     axios.delete(DELETE_COURSES + item.pk, config).then((res) => {
       alert("Deleted");
+      router.push("/admin-classes");
     });
   };
 
@@ -51,51 +51,59 @@ export default function AdminClases() {
   }
 
   return (
-    <section className="mt-[3%] ml-[7%]">
-      <div class="  flex flex-wrap  rounded-lg py-4 mt-2 hover:cursor-pointer">
-        {allCourses &&
-          allCourses.map((item, index) => {
-            return (
-              <div
+    <section class=" ml-[300px] flex flex-wrap gap-4 rounded-lg py-4 hover:cursor-pointer">
+      {allCourses &&
+        allCourses.map((item, index) => {
+          return (
+            <div class="flex items-center justify-around h-14 min-w-[150px]  bg-lighter hover:bg-main text-[#FFFFFF] rounded-lg ">
+              <p className="px-3">{item.grade_level}</p>
+              <button
                 onClick={() => handelOpenCourseUsers(item)}
-                class="flex items-center ml-[1%] h-14 w-[15%]  bg-lighter hover:bg-main text-[#FFFFFF] rounded-lg "
+                type="button"
+                class=" text-draker  rounded-lg focus:ring-2 focus:ring-gray-300 p-1 hover:bg-gray-100 inline-flex h-8 w-8 "
+                data-dismiss-target="#toast-undo"
+                aria-label="Close"
               >
-                <div
-                  style={{
-                    marginButton: 0,
-                  }}
-                  class="text-sm  text-center  ml-[5%] "
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="white"
+                  className="w-5 h-5"
                 >
-                  <p className="h-full mb-0">{item.grade_level}</p>
-                </div>
-                <div class="flex items-center ml-auto space-x-2  h-full">
-                  <button
-                    onClick={() => handelDeleteCousres(item)}
-                    type="button"
-                    class=" text-draker  rounded-lg focus:ring-2 focus:ring-gray-300 p-1 hover:bg-gray-100 inline-flex h-8 w-8 "
-                    data-dismiss-target="#toast-undo"
-                    aria-label="Close"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="white "
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="red"
-                      class="w-6 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-      </div>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={() => handelDeleteCousres(item)}
+                type="button"
+                class=" text-draker  rounded-lg focus:ring-2 focus:ring-gray-300 p-1 hover:bg-gray-100 inline-flex h-8 w-8 "
+                data-dismiss-target="#toast-undo"
+                aria-label="Close"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white "
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="red"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+          );
+        })}
     </section>
   );
 }

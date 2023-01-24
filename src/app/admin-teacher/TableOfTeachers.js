@@ -38,7 +38,7 @@ export default function TableOfTeachers() {
   }
   
   return (
-    <section className="mt-[3%]">
+    <section className="pt-[100px] ml-[300px]">
       <div class="mx-24 flex flex-col ">
       <h1 className="text-center text-2xl font-bold pb-3">List of Teachers</h1>
         <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">

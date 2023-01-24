@@ -22,7 +22,8 @@ export function Side() {
           <div className="space-y-6 md:space-y-10 mt-10">
 
             <h1 className="hidden md:block font-bold text-sm md:text-xl text-center">
-              Welcome | {TeacherName}
+              Welcome  {TeacherName.charAt(0).toUpperCase() +
+                TeacherName.substr(1).toLowerCase()}
             </h1>
             <div id="profile" className="space-y-3">
               <img
@@ -95,7 +96,7 @@ export function Side() {
                 </svg>
                 <span className="">Gradebook</span>
               </a>
-              <LogoutButton />
+              <div className='p-3'><LogoutButton /></div>
             </div>
           </div>
         </div>

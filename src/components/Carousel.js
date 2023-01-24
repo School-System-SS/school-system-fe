@@ -75,7 +75,7 @@ function Carousel() {
         <img src="https://img.freepik.com/free-photo/happy-teacher-listening-her-students_1098-2801.jpg?w=2000" />
         <img src="https://library.ascd.org/m/65a814d4d81d8b7b/webimage-Sachar_7-6-2022-iStock.png" />
         <img src="https://img.freepik.com/free-photo/back-school-concept-with-various-supplies_23-2149557580.jpg?w=360&t=st=1674514491~exp=1674515091~hmac=c32af341ae239274548a39331ad601044a3765f0d8d547eeffaf3c64eef405fc" />
-        <img src="https://img.freepik.com/free-photo/intercultural-schoolboys_1098-15900.jpg?size=338&ext=jpg&ga=GA1.2.622147747.1662818057&semt=sph" />
+        <img src="https://img.freepik.com/free-photo/confident-teacher-explaining-lesson-pupils_74855-9751.jpg?w=996&t=st=1674545824~exp=1674546424~hmac=0a8536865a5ed5500cf97b0163b3c3b9d9d224d224ce5382a522506088c51c85" />
         <img src="https://www.brookings.edu/wp-content/uploads/2021/01/shutterstock_1761753464-e1610404847451.jpg" />
         <img src="https://img.freepik.com/free-photo/girl-knowing-best-answer-question_329181-14249.jpg?w=360&t=st=1674514412~exp=1674515012~hmac=3f7bd13c4240c1b3615acfbd4e391fc613bd924e62bc7f315d3c0272d15fd85f" />
         

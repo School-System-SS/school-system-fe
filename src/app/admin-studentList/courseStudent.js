@@ -89,7 +89,7 @@ export default function CourseStudentList() {
   }
 
   return (
-    <div className="flex items-center justify-center p-12 general-bg">
+    <div className="flex items-center justify-center ml-[300px] p-12 general-bg">
       <div className="w-full max-w-[550px]">
         <h2 className="flex items-center justify-center pt-6 text-xl font-bold">
           Edit {JSON.parse(localStorage.getItem("courseDetails"))["grade_level"]} Course
