@@ -4,6 +4,7 @@ import React, { useState, useEffect, use } from "react";
 import AdminClases from "./AdminClases";
 import AdminHeader from "../admin/adminHeader";
 import Unauthorized from "../../components/Unauthorized";
+import SideBar from "../admin/SideBar"
 
 export default function page() {
   const [showContent, setContent] = useState(false);
@@ -16,7 +17,8 @@ export default function page() {
     <>
       {showContent && (
         <section>
-          <AdminHeader />
+          {/* <AdminHeader /> */}
+          <SideBar />
           <AdminClases />
         </section>
       )}

@@ -5,6 +5,7 @@ import AdminHeader from "./adminHeader";
 import DisplayCreate from "./DisplayCreate";
 import React, { useState, useEffect, use } from "react";
 import Unauthorized from "../../components/Unauthorized";
+import SideBar from "./SideBar";
 
 
 
@@ -20,7 +21,8 @@ export default function AdminView() {
     <>
       {showContent && (
         <section>
-          <AdminHeader />
+          {/* <AdminHeader /> */}
+          <SideBar />
           <DisplayCreate />
         </section>
       )}
