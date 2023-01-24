@@ -8,13 +8,13 @@
     min-width: 0;
     flex: 1 1 10px;
     object-fit: cover;
-    opacity: 0.75;
-    filter: grayscale(0.75);
+    opacity: 0.85;
+    /* filter: grayscale(0.50); */
     transition: 0.5s;
 }
 
 .gallery img:hover {
     flex: 1 1 280px;
     opacity: 1;
-    filter: grayscale(0);
+    /* filter: grayscale(0); */
 }

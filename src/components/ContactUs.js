@@ -40,9 +40,10 @@ export default function ContactUs(props) {
   };
 
   return (
-    <section id="contactUs">
+    <section id="contactUs" >
       {showToast && <ToastSendEmail handleCloseToast={handleCloseToast} />}
-      <h3>Contact Us</h3>
+      <h1 className="text-3xl text-center mb-4 text-black">Contact Us</h1>
+      <div className="my-3 w-28 h-1 div-color-design missionLine"></div>
       <Container className="cont">
         <div className="icons">
           <span>
