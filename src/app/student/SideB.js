@@ -7,7 +7,7 @@ export default function SideBar(props) {
   let Admin = JSON.parse(localStorage.getItem("username"));
 
   return (
-    <section className="flex h-full">
+    <section className="flex fixed h-full">
       <div
         id="view"
         className="text-[#FFFFFF] bg-main  h-full"
@@ -43,7 +43,7 @@ export default function SideBar(props) {
             <div id="menu" className="flex flex-col space-y-2">
               <a
                 href="/student/student-dashboard"
-                className="flex px-2 py-2 text-sm font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-lighter hover:scale-105 color-white"
+                className="flex px-2 py-2 text-sm font-medium text-[#FFFFFF] transition duration-150 ease-in-out rounded-md hover:text-lighter hover:scale-105 color-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -60,14 +60,14 @@ export default function SideBar(props) {
                   />
                 </svg>
 
-                <span className="">Dashboard</span>
+                <span className="text-[#FFFFFF]">Dashboard</span>
               </a>
 
 
               { props.inDetails &&
               <a
                 href="/student/student-assignment"
-                className="flex px-2 py-2 text-sm font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-lighter hover:scale-105 "
+                className="flex px-2 py-2 text-sm font-medium text-[#FFFFFF] transition duration-150 ease-in-out rounded-md hover:text-lighter hover:scale-105 "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ export default function SideBar(props) {
               
           
                 
-              <div className="m-5 ">
+              <div className="p-2">
                 
                 <LogoutButton />
                 </div>
