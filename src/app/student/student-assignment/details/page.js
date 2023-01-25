@@ -7,6 +7,9 @@ import swal from "sweetalert";
 function details() {
   const [inDetails, setInDetails] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const[assignTitle, setAssignTitle] = useState("")
+  const[assigndueDate, setAssigndueDate] = useState("")
+  const[assigndesc, setAssignDesc] = useState("")
   const REFRESH =
     "https://school-system-final-project.herokuapp.com/api/token/refresh/";
   
@@ -29,6 +32,9 @@ function details() {
       })
       .catch((err) => {});
     setInDetails(true);
+    setAssignTitle(JSON.parse(localStorage.getItem("item"))["title"])
+    setAssigndueDate(JSON.parse(localStorage.getItem("item"))["dueDate"])
+    setAssignDesc(JSON.parse(localStorage.getItem("item"))["description"])
   }, []);
 
   const handleUpdateAssignment = (e) => {
@@ -77,17 +83,17 @@ function details() {
             <div className="relative bg-white rounded-lg shadow ">
               <div className="flex items-start justify-between text-[#FFFFFF] bg-main p-4 border-b rounded-t">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  {JSON.parse(localStorage.getItem("item"))["title"]}
+                  {assignTitle}
                 </h3>
 
-                <p>{JSON.parse(localStorage.getItem("item"))["dueDate"]}</p>
+                <p>{assigndueDate}</p>
               </div>
               <div className="p-6 space-y-6">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                   Description
                 </h3>
                 <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 ">
-                  {JSON.parse(localStorage.getItem("item"))["description"]}
+                  {assigndesc}
                 </p>
               </div>
 
