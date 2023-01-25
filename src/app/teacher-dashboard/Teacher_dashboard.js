@@ -8,7 +8,8 @@ import '../student/student-dashboard/page.css'
 import LogoutButton from '../teacher-gradebook/Dashboard/LogoutButton'
 
 export default function Teacher_dashboard() {
-  let TeacherName = JSON.parse(localStorage.getItem("username"))
+  // let TeacherName = JSON.parse(localStorage.getItem("username"))
+  const [TeacherName, setTeacherName] = useState('');
 
   const router = useRouter();
   const [getAllCourses, setgetAllCourses] = useState([])
@@ -23,6 +24,8 @@ export default function Teacher_dashboard() {
 
     const res = await axios.get(URL, config);
     setgetAllCourses(res.data);
+    const userName = localStorage.getItem('username')
+    setTeacherName(userName)
 
   }
   useEffect(() => {

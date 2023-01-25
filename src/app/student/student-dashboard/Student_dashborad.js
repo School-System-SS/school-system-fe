@@ -17,13 +17,14 @@ export default function Student_dashborad() {
     router.push("/student/student-assignment");
   };
 
-  let config = {
-    headers: {
-      Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
-    },
-  };
+  
 
   useEffect(() => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     axios
       .get(URL_STUDENT_COURSE, config)
       .then((res) => {

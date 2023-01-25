@@ -3,16 +3,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 export default function GradedModal({ show, close, fName, lName, stditem, ds }) {
-    const URL_ASSIGNMENT = `https://school-system-final-project.herokuapp.com/api/v1/studentAssignment/update/${stditem.pk}`;
+    
+
+    const handleUpdateAssignment = (e) => {
+        e.preventDefault();
+        const URL_ASSIGNMENT = `https://school-system-final-project.herokuapp.com/api/v1/studentAssignment/update/${stditem.pk}`;
 
     let config = {
         headers: {
             Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
         },
     };
-
-    const handleUpdateAssignment = (e) => {
-        e.preventDefault();
 
         let body = {
             grade: e.target.points.value,
@@ -35,7 +36,7 @@ export default function GradedModal({ show, close, fName, lName, stditem, ds }) 
 
                 <form onSubmit={handleUpdateAssignment}>
 
-                    <div id="extralarge-modal" className="fixed ml-[30%] mb-5 z-50 w-full p-10 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+                    <div id="extralarge-modal" className="fixed ml-[350px] mb-5 z-50 w-full p-10 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
                         <div className="relative w-[80%] h-full max-w-5xl md:h-auto">
                             <div className="relative bg-[#FFFFFF] shadow-xl rounded-lg shadow dark:bg-gray-700">
                                 <div className="flex items-center justify-between p-5 border-b rounded-t bg-main text-[#FFFFFF] dark:border-gray-600">

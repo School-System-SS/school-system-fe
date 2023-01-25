@@ -1,10 +1,16 @@
 "use client";
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import LogoutButton from "../teacher-gradebook/Dashboard/LogoutButton";
 
 export default function SideBar() {
-  let Admin = JSON.parse(localStorage.getItem("username"));
+  const [Admin, setAdmin] = useState('');
+  // let Admin = JSON.parse(localStorage.getItem("username"));
+
+  useEffect(() => {
+    const userName = localStorage.getItem('username')
+    setAdmin(userName)
+    }, [])
 
   return (
     <section className="h-full fixed">
@@ -20,9 +26,7 @@ export default function SideBar() {
         >
           <div className="space-y-6 md:space-y-10 mt-10">
             <h1 className="hidden md:block font-bold text-sm md:text-xl text-center">
-              Welcome{" "}
-              {Admin.charAt(0).toUpperCase() +
-                Admin.substr(1).toLowerCase()}
+              Welcome{" "} {Admin}
             </h1>
             <div id="profile" className="space-y-3">
               <img

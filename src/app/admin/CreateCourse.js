@@ -21,13 +21,15 @@ export default function CreateCourse(props) {
   const REFRESH =
     "https://school-system-final-project.herokuapp.com/api/token/refresh/";
 
-  let config = {
-    headers: {
-      Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
-    },
-  };
+  
 
   useEffect(() => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
+
     let refreshBody = {
       refresh: JSON.parse(localStorage.getItem("refresh")),
     };
@@ -73,6 +75,11 @@ export default function CreateCourse(props) {
   };
   
   const handleCreateCourse = (e) => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     e.preventDefault();
     let body = {
       name: e.target.name.value,

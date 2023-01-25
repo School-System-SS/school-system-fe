@@ -10,21 +10,19 @@ export default function Assignment() {
   const [mainAssignment, setMainAssignment] = useState([]);
   const dataArr = [];
 
-  const URL_STUDENT_ASSIGNMENT = `https://school-system-final-project.herokuapp.com/api/v1/studentAssignment/course/get-all/${JSON.parse(
-    localStorage.getItem("courseId")
-  )}`;
-  const REFRESH =
-    "https://school-system-final-project.herokuapp.com/api/token/refresh/";
-  const URL_ASSIGNMENT =
-    "https://school-system-final-project.herokuapp.com/api/v1/assignment/get-one/";
+  
+  const REFRESH = "https://school-system-final-project.herokuapp.com/api/token/refresh/";
+  const URL_ASSIGNMENT = "https://school-system-final-project.herokuapp.com/api/v1/assignment/get-one/";
 
-  let config = {
-    headers: {
-      Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
-    },
-  };
+  
 
   useEffect(() => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
+    const URL_STUDENT_ASSIGNMENT = `https://school-system-final-project.herokuapp.com/api/v1/studentAssignment/course/get-all/${JSON.parse(localStorage.getItem("courseId"))}`;
     let refreshBody = {
       refresh: JSON.parse(localStorage.getItem("refresh")),
     };

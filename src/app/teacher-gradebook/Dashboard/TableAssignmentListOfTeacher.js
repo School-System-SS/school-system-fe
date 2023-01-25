@@ -9,10 +9,17 @@ export default function TableAssignmentListOfTeacher() {
   const [stdName, sendName] = useState([]);
   const [stditem, setItem] = useState([]);
   const [description, setDescription] = useState();
-  const AssignmentId = JSON.parse(localStorage.getItem("Assignment ID"))
-  const DESCR = `https://school-system-final-project.herokuapp.com/api/v1/assignment/get-one/${AssignmentId}`;
+  // const AssignmentId = JSON.parse(localStorage.getItem("Assignment ID"))
+  // const DESCR = `https://school-system-final-project.herokuapp.com/api/v1/assignment/get-one/${AssignmentId}`;
 
   const getDescription = async () => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
+    const AssignmentId = JSON.parse(localStorage.getItem("Assignment ID"))
+  const DESCR = `https://school-system-final-project.herokuapp.com/api/v1/assignment/get-one/${AssignmentId}`;
     const res = await axios.get(DESCR, config);
     setDescription(res.data.description)
   }
@@ -23,15 +30,20 @@ export default function TableAssignmentListOfTeacher() {
 
   const NAMEURL = "https://school-system-final-project.herokuapp.com/api/v1/student/get-all/";
 
-  let config = {
-    headers: {
-      Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
-    },
-  };
+  // let config = {
+  //   headers: {
+  //     Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+  //   },
+  // };
 
   const [studentName, setStudentName] = useState([]);
 
   const getStudentNames = async () => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     const res = await axios.get(NAMEURL, config);
     setStudentName(res.data)
   }
@@ -40,6 +52,12 @@ export default function TableAssignmentListOfTeacher() {
   const [allStudent, setAllStudent] = useState([]);
 
   const getAll = async () => {
+    const AssignmentId = JSON.parse(localStorage.getItem("Assignment ID"))
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     const res = await axios.get(URL + AssignmentId, config);
     setAllStudent(res.data);
 
@@ -53,7 +71,7 @@ export default function TableAssignmentListOfTeacher() {
   return (
     <>
       <section>
-        <div className="ml-[200px] my-20 flex flex-col ">
+        <div className="ml-[170px] my-20 flex flex-col ">
           <h1></h1>
           <div className="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
             <div className="py-2 inline-block min-w-full sm:px-8 lg:px-8">

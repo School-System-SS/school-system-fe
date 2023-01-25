@@ -16,18 +16,18 @@ export default function CourseStudentList() {
     "https://school-system-final-project.herokuapp.com/api/v1/student/get-all/";
   const TEACHERSROUTES =
     "https://school-system-final-project.herokuapp.com/api/v1/teacher/get-all/";
-  const UPDATECOURSE = 
-  `https://school-system-final-project.herokuapp.com/api/v1/course/update/${JSON.parse(localStorage.getItem("courseDetails"))["pk"]}`;
+  
   const REFRESH =
     "https://school-system-final-project.herokuapp.com/api/token/refresh/";
 
-  let config = {
-    headers: {
-      Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
-    },
-  };
+  
 
   useEffect(() => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     let refreshBody = {
       refresh: JSON.parse(localStorage.getItem("refresh")),
     };
@@ -72,6 +72,13 @@ export default function CourseStudentList() {
 
   const handleUpdateCourse = (e) => {
     e.preventDefault();
+    const UPDATECOURSE = 
+  `https://school-system-final-project.herokuapp.com/api/v1/course/update/${JSON.parse(localStorage.getItem("courseDetails"))["pk"]}`;
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     let body = {
       name: e.target.name.value,
       time: e.target.time.value,

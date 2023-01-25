@@ -15,13 +15,14 @@ export default function AdminClases() {
   const DELETE_COURSES =
     "https://school-system-final-project.herokuapp.com/api/v1/course/delete/";
 
-  let config = {
-    headers: {
-      Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
-    },
-  };
+  
 
   useEffect(() => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     let refreshBody = {
       refresh: JSON.parse(localStorage.getItem("refresh")),
     };
@@ -40,6 +41,11 @@ export default function AdminClases() {
   }, []);
 
   const handelDeleteCousres = (item) => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     axios.delete(DELETE_COURSES + item.pk, config).then((res) => {
       swal({
         title: "Good job!",

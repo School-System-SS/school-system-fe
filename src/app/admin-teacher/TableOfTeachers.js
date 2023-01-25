@@ -14,13 +14,14 @@ export default function TableOfTeachers() {
   
   const DELETE_TEACHER ="https://school-system-final-project.herokuapp.com/api/v1/teacher/delete/"
 
-  let config = {
-    headers: {
-      Authorization: `Bearer ${ JSON.parse(localStorage.getItem("access"))}`,
-    },
-  };
+  
 
   useEffect(() => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${ JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     axios
       .get(TEACHERS_URL, config)
       .then((res) => {
@@ -30,6 +31,11 @@ export default function TableOfTeachers() {
   })
 
   const handelDeleteTeacher =(item)=>{
+    let config = {
+      headers: {
+        Authorization: `Bearer ${ JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     axios
     .delete(DELETE_TEACHER+item.pk,config)
     .then((res)=>{
