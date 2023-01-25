@@ -9,17 +9,16 @@ function details() {
   const [showAlert, setShowAlert] = useState(false);
   const REFRESH =
     "https://school-system-final-project.herokuapp.com/api/token/refresh/";
-  const URL_ASSIGNMENT = `https://school-system-final-project.herokuapp.com/api/v1/studentAssignment/update/${
-    JSON.parse(localStorage.getItem("id"))["pk"]
-  } `;
+  
 
-  let config = {
-    headers: {
-      Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
-    },
-  };
+  
 
   useEffect(() => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     let refreshBody = {
       refresh: JSON.parse(localStorage.getItem("refresh")),
     };
@@ -34,6 +33,12 @@ function details() {
 
   const handleUpdateAssignment = (e) => {
     e.preventDefault();
+    const URL_ASSIGNMENT = `https://school-system-final-project.herokuapp.com/api/v1/studentAssignment/update/${JSON.parse(localStorage.getItem("id"))["pk"]} `;
+  let config = {
+    headers: {
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+    },
+  };
     let body = {
       attachment: e.target.attachment.value,
     };

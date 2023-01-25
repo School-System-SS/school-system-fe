@@ -5,22 +5,25 @@ import axios from "axios";
 import LogoutButton from "./LogoutButton";
 
 export default function SideBar(props) {
-  let TeacherName = JSON.parse(localStorage.getItem("username"))
+  // let TeacherName = JSON.parse(localStorage.getItem("username"))
+  const [TeacherName, setTeacherName] = useState('');
+  const [courseId, setcourseId] = useState('');
 
   const router = useRouter();
 
   const URL = "https://school-system-final-project.herokuapp.com/api/v1/assignment/get-all/";
 
-  let config = {
-    headers: {
-      Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
-    },
-  };
+  
 
-  const courseId = JSON.parse(localStorage.getItem("courseId"))
+  // const courseId = JSON.parse(localStorage.getItem("courseId"))
   const [getAllAssignment, setgetAllAssignment] = useState([]);
 
   const getAll = async () => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
 
     const res = await axios.get(URL, config);
     setgetAllAssignment(res.data);
@@ -28,6 +31,9 @@ export default function SideBar(props) {
   }
   useEffect(() => {
     getAll();
+    setcourseId(JSON.parse(localStorage.getItem("courseId")))
+    const userName = localStorage.getItem('username')
+    setTeacherName(userName)
   }, [])
   const filteredCourse = getAllAssignment.filter(item => courseId == item.course)
   

@@ -1,10 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LogoutButton from "../teacher-gradebook/Dashboard/LogoutButton";
 
 export default function SideBar(props) {
-  let Admin = JSON.parse(localStorage.getItem("username"));
+  // let Admin = JSON.parse(localStorage.getItem("username"));
+  const [Admin, setAdmin] = useState("");
+  useEffect(() => {
+    const userName = localStorage.getItem("username");
+    setAdmin(userName);
+  }, []);
 
   return (
     <section className="flex fixed h-full">
@@ -21,8 +26,7 @@ export default function SideBar(props) {
           <div className="mt-10 space-y-6 md:space-y-10">
             <h1 className="hidden text-sm font-bold text-center md:block md:text-xl">
               Welcome{" "}
-              {Admin.charAt(0).toUpperCase() +
-                Admin.substr(1).toLowerCase()}
+              {Admin.charAt(0).toUpperCase() + Admin.substr(1).toLowerCase()}
             </h1>
             <div id="profile" className="space-y-3">
               <img
@@ -36,9 +40,6 @@ export default function SideBar(props) {
                 </h2>
               </div>
             </div>
-
-
-            
 
             <div id="menu" className="flex flex-col space-y-2">
               <a
@@ -63,41 +64,37 @@ export default function SideBar(props) {
                 <span className="text-[#FFFFFF]">Dashboard</span>
               </a>
 
-
-              { props.inDetails &&
-              <a
-                href="/student/student-assignment"
-                className="flex px-2 py-2  no-underline text-sm font-medium text-[#FFFFFF] transition duration-150 ease-in-out rounded-md hover:text-[#FFFFFF] hover:scale-105 "
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6 mr-1"
+              {props.inDetails && (
+                <a
+                  href="/student/student-assignment"
+                  className="flex px-2 py-2  no-underline text-sm font-medium text-[#FFFFFF] transition duration-150 ease-in-out rounded-md hover:text-[#FFFFFF] hover:scale-105 "
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 mr-1"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                    />
                   </svg>
 
-                <span className="">Assignment</span>
-              </a>}
-              
-          
-                
+                  <span className="">Assignment</span>
+                </a>
+              )}
+
               <div className="p-2">
-                
                 <LogoutButton />
-                </div>
+              </div>
             </div>
           </div>
         </div>
-        </div>
-      
+      </div>
     </section>
   );
 }

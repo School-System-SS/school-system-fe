@@ -1,5 +1,5 @@
 'use client'
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Image from 'next/image'
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -7,8 +7,14 @@ import Navbar from "react-bootstrap/Navbar";
 import LogoutButton from "./LogoutButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 export default function StudentHeader(props) {
-  let USERNAME = JSON.parse(localStorage.getItem("username"))
+  const [USERNAME, setUSERNAME] = useState('');
+
+  useEffect(() => {
+    const userName = localStorage.getItem('username')
+    setUSERNAME(userName)
+    }, [])
   return (
 
     <Navbar collapseOnSelect expand="lg" className=" bg-main" fixed="top">

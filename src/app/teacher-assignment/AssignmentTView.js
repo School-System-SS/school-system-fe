@@ -6,14 +6,15 @@ export default function AssignmentTeacherView() {
     const URLDEL = `https://school-system-final-project.herokuapp.com/api/v1/assignment/delete/`;
     const URL = "https://school-system-final-project.herokuapp.com/api/v1/assignment/get-all/";
     
+    
+
+
+  const DeleteAss =(data)=>{
     let config = {
       headers: {
         Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
       },
     };
-
-
-  const DeleteAss =(data)=>{
     axios
     .delete(URLDEL+data.pk,config)
     .then((res)=>{
@@ -26,6 +27,11 @@ const courseId=JSON.parse(localStorage.getItem("courseId"))
   const [getAllAssignment, setgetAllAssignment] = useState([]);
 
   const getAll = async () => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+      },
+    };
     
     const res = await axios.get(URL, config);
     setgetAllAssignment(res.data);
